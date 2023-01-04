@@ -1,5 +1,13 @@
 <template>
-  <Questions_home/>
+  <div id="app" class="h-100">
+    <div class="container-fluid h-100">
+      <div class="h-100 d-flex justify-content-center align-items-center">
+        <div class="col-md-5 shadow rounded px-5 py-4 bg-white text-left">
+          <Questions_home/>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
