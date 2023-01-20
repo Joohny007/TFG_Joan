@@ -2,7 +2,7 @@
   <div id="app" class="h-100">
     <div class="container-fluid h-100">
       <div class="h-100 d-flex justify-content-center align-items-center">
-        <div class="col-md-5 shadow rounded px-5 py-4 bg-white text-left">
+        <div class="col-md-5 shadow rounded px-5 py-4 bg-light">
           <Questions_home/>
         </div>
       </div>
@@ -30,4 +30,7 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 } */
+</style>
+<style lang="css">
+  @import "./styles/style.css";
 </style>
