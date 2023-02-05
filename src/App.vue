@@ -5,7 +5,8 @@
       <div class="h-100 d-flex justify-content-center align-items-center">
         <div class="col-md-6 shadow rounded px-5 py-4 bg-light">
           <!-- <TFG_Intro/> -->
-          <Questions_home/>
+          <Questions_home v-if="this.$store.getters.getStartForm"/>
+          <Intro_game v-if="this.$store.getters.getStartGame"/>
         </div>
       </div>
     </div>
@@ -14,12 +15,19 @@
 
 <script>
 import Questions_home from './components/Questions_home.vue'
+import Intro_game from './components/Intro_game.vue'
 
 
 export default {
   name: 'App',
+  data() {
+    return {
+      startGame:false,
+    };
+  },
   components: {
     Questions_home,
+    Intro_game,
   }
 }
 </script>

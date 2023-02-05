@@ -1,6 +1,6 @@
 <template>
    <div id="introform">
-        <p>Hola my name is Joan and I want to introduce you to my TFG 😁</p>
+        <p>Hola {{msgJuan}} my name is Joan and I want to introduce you to my TFG 😁</p>
         <button class="" style="margin: auto;" type="button" @click="nextQuestion('introform', 'startform')">NEXT</button>
     </div>
 
@@ -84,7 +84,7 @@
       <label for="mujer">Sí</label>
       <input type="radio" id="hombre" name="ultima" value="hombre">
       <label for="hombre">No</label>
-      <button class="buttonQuestion" style="margin: auto;" type="button" @click="nextQuestion('ultima', 'enviar')">NEXT</button>
+      <button class="buttonQuestion" style="margin: auto;" type="button" @click="setStartForm(); setStartGame()">NEXT</button>
     </div>
   </form>
 
@@ -124,7 +124,13 @@
     nextQuestion: function(id, nextId){
       document.getElementById(id).style.display="none"
       document.getElementById(nextId).style.display="block"
-    }
+    },
+    setStartForm: function(){
+      this.$store.commit('setStartForm', !this.$store.getters.getStartForm)
+    },
+    setStartGame: function(){
+      this.$store.commit('setStartGame', !this.$store.getters.getStartGame)
+    },
   }
 
   }

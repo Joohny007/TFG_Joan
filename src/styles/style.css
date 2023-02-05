@@ -30,6 +30,10 @@ body {
     -webkit-transition: 0.3s;
     font-size: 22px;
   }
+  .formRadio input[type="radio"]:checked + label {
+    background-color: #11c3cf;
+    /* border-color: var(--main-color); */
+  }
   .buttonQuestion {
     background: #11c3cf;
     color: white;
