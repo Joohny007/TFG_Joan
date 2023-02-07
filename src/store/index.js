@@ -5,6 +5,7 @@ export default createStore({
     state: {
         startForm: true,
         startGame: false,
+        level1: false,
     },
     getters: {
         getStartForm: state=>{
@@ -13,6 +14,10 @@ export default createStore({
 
         getStartGame: state=>{
             return state.startGame;
+        },
+
+        getLevel1: state=>{
+            return state.level1;
         },
     },
     mutations: {
@@ -23,6 +28,10 @@ export default createStore({
 
         setStartGame(state, valor){
             state.startGame = valor;
+        },
+
+        setLevel1(state, valor){
+            state.level1 = valor;
         },
         
     }

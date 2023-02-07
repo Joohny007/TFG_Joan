@@ -132,7 +132,6 @@
       this.$store.commit('setStartGame', !this.$store.getters.getStartGame)
     },
   }
-
   }
   </script>
   

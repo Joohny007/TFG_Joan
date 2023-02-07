@@ -1,5 +1,6 @@
 body {
-    background-color: #4cbbe7;
+    /* background-color: #4cbbe7; */
+    background-color: #EABE27;
     font-family: Verdana;
     text-align: center;
 }
@@ -63,4 +64,25 @@ body {
     width: auto;
     font-size: 17px;
     display: block;
+  }
+
+  .drop-zone {
+    /* width: 50%; */
+    margin: auto;
+    background-color: #ecf0f1;
+    padding: 10px;
+    min-height: 10px;
+  }
+
+  .drag-el {
+    background-color: #3498db;
+    color: white;
+    padding: 5px;
+    margin-bottom: 10px;
+    margin: 2px;
+  }
+
+  /* Quita el margin bottom del final para que quede simetrico con el margin-top */
+  .drag-el:nth-last-of-type(1) {
+    margin-bottom: 0;
   }

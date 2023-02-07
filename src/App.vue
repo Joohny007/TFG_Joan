@@ -7,6 +7,7 @@
           <!-- <TFG_Intro/> -->
           <Questions_home v-if="this.$store.getters.getStartForm"/>
           <Intro_game v-if="this.$store.getters.getStartGame"/>
+          <Level_1 v-if="this.$store.getters.getLevel1"></Level_1>
         </div>
       </div>
     </div>
@@ -16,6 +17,7 @@
 <script>
 import Questions_home from './components/Questions_home.vue'
 import Intro_game from './components/Intro_game.vue'
+import Level_1 from './components/Level_1.vue'
 
 
 export default {
@@ -28,6 +30,7 @@ export default {
   components: {
     Questions_home,
     Intro_game,
+    Level_1,
   }
 }
 </script>
