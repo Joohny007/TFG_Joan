@@ -69,9 +69,19 @@ body {
   .drop-zone {
     /* width: 50%; */
     margin: auto;
+    margin-bottom: 1rem;
     background-color: #ecf0f1;
     padding: 10px;
-    min-height: 10px;
+    min-height: 40px;
+  }
+
+  .drop-zone-initial {
+    /* width: 50%; */
+    margin: auto;
+    margin-bottom: 1rem;
+    background-color: bg-light;
+    padding: 10px;
+    min-height: 40px;
   }
 
   .drag-el {
@@ -80,6 +90,14 @@ body {
     padding: 5px;
     margin-bottom: 10px;
     margin: 2px;
+  }
+
+  .right{
+    background-color: rgb(48, 153, 27) !important;
+  }
+
+  .wrong{
+    background-color: tomato !important;
   }
 
   /* Quita el margin bottom del final para que quede simetrico con el margin-top */
