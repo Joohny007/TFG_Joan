@@ -8,6 +8,7 @@
           <Questions_home v-if="this.$store.getters.getStartForm"/>
           <Intro_game v-if="this.$store.getters.getStartGame"/>
           <Level_1 v-if="this.$store.getters.getLevel1"></Level_1>
+          <Level_2 v-if="this.$store.getters.getLevel2"></Level_2>
         </div>
       </div>
     </div>
@@ -18,6 +19,7 @@
 import Questions_home from './components/Questions_home.vue'
 import Intro_game from './components/Intro_game.vue'
 import Level_1 from './components/Level_1.vue'
+import Level_2 from './components/Level_2.vue'
 
 
 export default {
@@ -31,6 +33,7 @@ export default {
     Questions_home,
     Intro_game,
     Level_1,
+    Level_2,
   }
 }
 </script>
