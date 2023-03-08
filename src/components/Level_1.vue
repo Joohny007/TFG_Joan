@@ -20,7 +20,7 @@
     </div>
 
     
-    <p>Cuando revisamos el movil de noche, la luz de nuestras pantallas emite una radiación conocida como </p>
+    <p>Cuando revisamos el móvil de noche, la luz de nuestras pantallas emite una radiación conocida como </p>
     <div 
         id="3"
         class="drop-zone"
