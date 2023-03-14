@@ -31,6 +31,9 @@ export default {
       startGame:false,
     };
   },
+  mounted() {
+    this.$store.commit('setID', Math.floor(1000000 + Math.random() * 9000000))
+  },
   components: {
     Questions_home,
     Intro_game,

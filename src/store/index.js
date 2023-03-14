@@ -3,13 +3,18 @@ import { createStore } from 'vuex'
 export default createStore({
 
     state: {
+        preForm: [],
         startForm: true,
         startGame: false,
         level1: false,
         level2: false,
         level3: false,
+        ID: 0,
     },
     getters: {
+        getPreForm: state =>{
+            return state.preForm
+        },
         getStartForm: state=>{
             return state.startForm;
         },
@@ -28,9 +33,14 @@ export default createStore({
         getLevel3: state=>{
             return state.level3;
         },
+        getID: state =>{
+            return state.ID
+        },
     },
     mutations: {
-
+        setPreForm(state, formulary){
+            state.preForm = formulary;
+        },
         setStartForm(state, valor){
             state.startForm = valor;
         },
@@ -51,5 +61,8 @@ export default createStore({
             state.level3 = valor;
         },
         
+        setID(state, ID){
+            state.ID = ID;
+        },
     }
 })

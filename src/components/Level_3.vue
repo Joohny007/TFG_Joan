@@ -25,18 +25,18 @@
         data() {
             return {
                 boxData: [
-                    { id:1, value: "a😁", show: false },
-                    { id:2, value: "a😎", show: false },
-                    { id:3, value: "a😎", show: false },
-                    { id:4, value: "a😁", show: false },
-                    { id:5, value: "a🤑", show: false },
-                    { id:6, value: "a🥰", show: false },
-                    { id:7, value: "a🥰", show: false },
-                    { id:8, value: "a🤑", show: false },
-                    { id:9, value: "a🤑", show: false },
-                    { id:10, value: "a🥰", show: false },
-                    { id:11, value: "a🥰", show: false },
-                    { id:12, value: "a🤑", show: false },
+                    { id:1, value: "Dejar el móvil o la tablet mínimo 30 minutos antes de acostarnos.", show: false },
+                    { id:2, value: "Evitar siestas durante el dia", show: false },
+                    { id:3, value: "Evitar siestas durante el dia", show: false },
+                    { id:4, value: "Dejar el móvil o la tablet mínimo 30 minutos antes de acostarnos.", show: false },
+                    { id:5, value: "Evitar hacer ejercicio tarde", show: false },
+                    { id:6, value: "Evitar cenar tarde por la noche", show: false },
+                    { id:7, value: "Evitar cenar tarde por la noche", show: false },
+                    { id:8, value: "Evitar hacer ejercicio tarde", show: false },
+                    { id:9, value: "Evitar sustancias que alteren el sueño (alcohol, cafeína, nicotina)", show: false },
+                    { id:10, value: "Propiciar un buen entorno para el sueño (oscuro, fresco, tranquilo)", show: false },
+                    { id:11, value: "Propiciar un buen entorno para el sueño (oscuro, fresco, tranquilo)", show: false },
+                    { id:12, value: "Evitar sustancias que alteren el sueño (alcohol, cafeína, nicotina)", show: false },
                 ],
                 currVal: null,
                 result: ''
@@ -88,7 +88,7 @@
   .box {
     width: 200px;
     float: left  
-}
+  }
 
 .box button { 
     width: 100%;
@@ -105,7 +105,6 @@ button p {
 button.show p { margin: 0; }
 
 .box button span {
-    font-size: 50px;
     display: none;
 }
 

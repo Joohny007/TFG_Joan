@@ -28,7 +28,7 @@
         </div>
         <div class="column">
             <input id="malasnotas" type="image" v-bind:src="require('../images/malas notas.jpg')" alt="" style="width: 100%;" @click="mark('malasnotas')">
-            <p>Malas notas</p>
+            <p>Mal rendimiento académico</p>
         </div>
     </div>
     <button id="comprobar_level2" class="buttonQuestion" style="margin: auto;" @click="verification2(); nextLevel('comprobar_level2', 'next_level2')">Comprobar</button>
