@@ -1,8 +1,9 @@
 <template>
    <div id="introform">
         <p>Hola {{msgJuan}} my name is Joan and I want to introduce you to my TFG 😁</p>
-        <button class="" style="margin: auto;" type="button" @click="nextQuestion('introform', 'startform')">NEXT</button>
+        <button class="" style="margin: auto;" type="button" @click="nextQuestion('introform', 'startform'); skipForm('none', 'skip')">NEXT</button>
     </div>
+  <button id="skip" v-if="this.$store.getters.getTestMode" class="" style="margin: auto; display: none;" type="button" @click="setStartForm(); setStartGame(); skipForm('skip', 'none')">SKIP</button>
   <form style>
     <div id="startform" style="display:none">
       <h1 class="text-center text-primary">Cuestionario Inicial</h1>
@@ -179,7 +180,18 @@
       console.log(preForm);
       this.$store.commit('setPreForm', preForm);
       this.sendEmail()
-  },
+    },
+    skipForm: function(id, nextId) {
+      if(id == 'none'){
+        setTimeout(() => {
+          document.getElementById(nextId).style.display = 'block';
+        }, 500);
+      }
+      else{
+        document.getElementById(id).style.display = 'none';
+      }
+    }
+
   }
   }
   </script>

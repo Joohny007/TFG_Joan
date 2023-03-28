@@ -10,6 +10,7 @@ export default createStore({
         level2: false,
         level3: false,
         ID: 0,
+        testMode: true,
     },
     getters: {
         getPreForm: state =>{
@@ -35,6 +36,9 @@ export default createStore({
         },
         getID: state =>{
             return state.ID
+        },
+        getTestMode: state =>{
+            return state.testMode
         },
     },
     mutations: {
