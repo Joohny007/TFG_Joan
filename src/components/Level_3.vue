@@ -60,11 +60,11 @@
                 } else {
                     this.result = "Try Again!";
                     this.boxData.map(box => box.show = false);
-                    setTimeout(() => {
-                        this.boxData[_id].show = false;
-                        const button = document.getElementById(`box_${_id}`);
-                        button.classList.remove("show");
-                    }, 1000);
+
+                    this.boxData[_id].show = false;
+                    const button = document.getElementById(`box_${_id}`);
+                    button.classList.remove("show");
+
                     this.currVal = null;
                 }
             }

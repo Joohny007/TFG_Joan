@@ -11,6 +11,8 @@ export default createStore({
         level3: false,
         ID: 0,
         testMode: true,
+        correctAnswers: 0,
+        wrongAnswers: 0,
     },
     getters: {
         getPreForm: state =>{
@@ -40,6 +42,12 @@ export default createStore({
         getTestMode: state =>{
             return state.testMode
         },
+        getCorrectAnswers: state =>{
+            return state.correctAnswers
+        },
+        getWrongAnswers: state =>{
+            return state.wrongAnswers
+        },
     },
     mutations: {
         setPreForm(state, formulary){
@@ -48,25 +56,26 @@ export default createStore({
         setStartForm(state, valor){
             state.startForm = valor;
         },
-
         setStartGame(state, valor){
             state.startGame = valor;
         },
-
         setLevel1(state, valor){
             state.level1 = valor;
         },
-
         setLevel2(state, valor){
             state.level2 = valor;
         },
-
         setLevel3(state, valor){
             state.level3 = valor;
         },
-        
         setID(state, ID){
             state.ID = ID;
+        },
+        setCorrectAnswers(state, valor){
+            state.correctAnswers += valor
+        },
+        setWrongAnswers(state, valor){
+            state.wrongAnswers += valor
         },
     }
 })

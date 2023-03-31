@@ -50,7 +50,31 @@
             },
 
             verification2: function() {
-                
+                var wrongAns = 0
+                var correctAns = 0
+                if(document.getElementById('estrés').style.border == "10px solid cyan"){
+                    wrongAns += 1
+                }else{correctAns += 1}
+                if(document.getElementById('cansancio').style.border == "10px solid cyan"){
+                    correctAns += 1
+                }else{wrongAns += 1}
+                if(document.getElementById('depresión').style.border == "10px solid cyan"){
+                    correctAns += 1
+                }else{wrongAns += 1}
+                if(document.getElementById('mal_humor').style.border == "10px solid cyan"){
+                    correctAns += 1
+                }else{wrongAns += 1}
+                if(document.getElementById('nervios').style.border == "10px solid cyan"){
+                    wrongAns += 1
+                }else{correctAns += 1}
+                if(document.getElementById('hambre').style.border == "10px solid cyan"){
+                    wrongAns += 1
+                }else{correctAns += 1}
+                if(document.getElementById('malasnotas').style.border == "10px solid cyan"){
+                    correctAns += 1
+                }else{wrongAns += 1}
+                this.$store.commit('setCorrectAnswers', correctAns)
+                this.$store.commit('setWrongAnswers', wrongAns)
             },
 
 

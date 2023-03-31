@@ -59,8 +59,9 @@
         <p>del sueño frecuente que puede causar dificultad para conciliar el sueño (quedarse dormido) o mantenerlo, o puede hacer que 
             nos despertemos demasiado temprano y no podamos volver a dormirnos.</p>
         
-        <button id="comprobar_level1.2" class="buttonQuestion" style="margin: auto;" @click="verification1_1(); nextLevel('comprobar_level1.2', 'next_level1.2')">Comprobar</button>
-        <button id="next_level1.2" class="buttonQuestion" style="margin: auto; display: none;" type="button" @click="setLevel1();">NEXT</button>
+        <p style="display: none"><strong>Debes rellenar todos los huecos</strong></p>
+        <button id="comprobar_level1.1" class="buttonQuestion" style="margin: auto;" @click="verification1_1();">Comprobar</button>
+        <button id="next_level1.1" class="buttonQuestion" style="margin: auto; display: none;" type="button" @click="nextLevel('level1.1', 'level1.2');">NEXT</button>
 
     </div>
 
@@ -142,9 +143,10 @@
                 {{ item.title }}
             </div>
         </div>
-        <button id="comprobar_level1.1" class="buttonQuestion" style="margin: auto;" @click="verification1_2(); nextLevel('comprobar_level1.1', 'next_level1.1')">Comprobar</button>
-        <button id="next_level1.1" class="buttonQuestion" style="margin: auto; display: none;" type="button" @click="setLevel1(); setLevel2()">NEXT</button>
+        <button id="comprobar_level1.2" class="buttonQuestion" style="margin: auto;" @click="verification1_2();">Comprobar</button>
+        <button id="next_level1.2" class="buttonQuestion" style="margin: auto; display: none;" type="button" @click="setLevel1(); setLevel2()">NEXT</button>
     </div>
+    <p id="gap" style="color: red; padding-top: 20px; display: none"><strong>Debes rellenar todos los huecos</strong></p>
 </template>
 
 
@@ -167,7 +169,8 @@
                 { id: 3, title: 'ritmo circadiano', list: 1},
                 { id: 4, title: 'insomnio tecnológico', list: 1},
             ])
-
+            
+            /*Li passem el valor i em retorna la llista*/
             const getList1 = (list) => {
                 return items1.value.filter((item) => item.list == list)
             }
@@ -186,7 +189,7 @@
                 const itemID = event.dataTransfer.getData('itemID')
                 var item = null;
                 if(getList1(list).length < 1 || list == 1){
-                  item = items2.value.find((item) => item.id == itemID);
+                  item = items1.value.find((item) => item.id == itemID);
                   item.list = list;
                 }                  
             }
@@ -210,34 +213,73 @@
         },
         methods: {
             verification1_1: function(){
-            if(this.getList1(3)[0].id == 10){
-              document.getElementById(3).children[0].classList.add('right')
+            var correctAns = 0;
+            var wrongAns = 0;
+            /*Si cap de les llistes està buida*/
+            if(this.getList1(12).length != 0 && this.getList1(13).length != 0){
+                if(this.getList1(13)[0].id == 11){
+                    document.getElementById(13).children[0].classList.add('right')
+                    correctAns += 1
 
-            }else{
-              document.getElementById(3).children[0].classList.add('wrong')
+                }else{
+                    document.getElementById(13).children[0].classList.add('wrong')
+                    wrongAns += 1
+                }
+            
+                if(this.getList1(12)[0].id == 14){
+                    document.getElementById(12).children[0].classList.add('right')
+                    correctAns += 1
+
+                }else{
+                    document.getElementById(12).children[0].classList.add('wrong')
+                    wrongAns += 1
+                }
+                this.nextLevel('comprobar_level1.1', 'next_level1.1')
+                document.getElementById('gap').style.display="none"
+                this.$store.commit('setCorrectAnswers', correctAns)
+                this.$store.commit('setWrongAnswers', wrongAns)
             }
-
-            if(this.getList1(2)[0].id == 12){
-              document.getElementById(2).children[0].classList.add('right')
-
-            }else{
-              document.getElementById(2).children[0].classList.add('wrong')
+            else{
+                document.getElementById('gap').style.display="block"
             }
           },
 
           verification1_2: function(){
-            if(this.getList2(3)[0].id == 0){
-              document.getElementById(3).children[0].classList.add('right')
+            var correctAns = 0;
+            var wrongAns = 0;
+            if(this.getList2(2).length != 0 && this.getList2(3).length != 0 && this.getList2(4).length != 0){
+                if(this.getList2(3)[0].id == 0){
+                    document.getElementById(3).children[0].classList.add('right')
+                    correctAns += 1
 
-            }else{
-              document.getElementById(3).children[0].classList.add('wrong')
+                }else{
+                    document.getElementById(3).children[0].classList.add('wrong')
+                    wrongAns += 1
+                }
+
+                if(this.getList2(2)[0].id == 2){
+                    document.getElementById(2).children[0].classList.add('right')
+                    correctAns += 1
+
+                }else{
+                    document.getElementById(2).children[0].classList.add('wrong')
+                    wrongAns += 1
+                }
+                if(this.getList2(4)[0].id == 4){
+                    document.getElementById(4).children[0].classList.add('right')
+                    correctAns += 1
+
+                }else{
+                    document.getElementById(4).children[0].classList.add('wrong')
+                    wrongAns += 1
+                }
+                this.nextLevel('comprobar_level1.2', 'next_level1.2')
+                document.getElementById('gap').style.display="none"
+                this.$store.commit('setCorrectAnswers', correctAns)
+                this.$store.commit('setWrongAnswers', wrongAns)
             }
-
-            if(this.getList2(2)[0].id == 2){
-              document.getElementById(2).children[0].classList.add('right')
-
-            }else{
-              document.getElementById(2).children[0].classList.add('wrong')
+            else{
+                document.getElementById('gap').style.display="block"
             }
           },
 
