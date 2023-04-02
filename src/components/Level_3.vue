@@ -3,7 +3,7 @@
     <div class="gameArea">
         <h3>{{results}}</h3>
         <h4>Current Box: {{ currVal }}</h4>
-        <div class="boxHolder">
+        <div class="boxHolder" style="padding-bot: 20px;">
             <div class="box"
                 v-for="(box, index) in boxData" :key="index"
                 >
@@ -17,6 +17,7 @@
             </div>
         </div>
     </div>
+    <button id="next_level3" class="buttonQuestion" style="margin: auto; display: none;" type="button" @click="setLevel3()">NEXT</button>
     </template>
     
     <script>
@@ -39,7 +40,8 @@
                     { id:12, value: "Evitar sustancias que alteren el sueño (alcohol, cafeína, nicotina)", show: false },
                 ],
                 currVal: null,
-                result: ''
+                result: '',
+                correctMatches: []
             }
         },
         methods: {
@@ -57,13 +59,21 @@
                 } else if (_value === this.currVal) {
                     this.result = "Great!";
                     this.currVal = null;
+                    this.correctMatches.push(this.currVal, _value)
+                    if(this.correctMatches.length == 12){
+                        document.getElementById('next_level3').style.display="block"
+                    }
+                        
                 } else {
                     this.result = "Try Again!";
                     this.boxData.map(box => box.show = false);
+                    this.correctMatches = [];
 
-                    this.boxData[_id].show = false;
-                    const button = document.getElementById(`box_${_id}`);
-                    button.classList.remove("show");
+                    setTimeout(() => {
+                        this.boxData[_id].show = false;
+                        const button = document.getElementById(`box_${_id}`);
+                        button.classList.remove("show");
+                    }, 1000);
 
                     this.currVal = null;
                 }

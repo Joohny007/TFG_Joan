@@ -79,8 +79,8 @@
 
 
             nextLevel: function(id, nextId){
-            document.getElementById(id).style.display="none"
-            document.getElementById(nextId).style.display="block"
+                document.getElementById(id).style.display="none"
+                document.getElementById(nextId).style.display="block"
             },
 
             setLevel2: function(){
