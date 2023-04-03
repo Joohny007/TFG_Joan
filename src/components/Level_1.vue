@@ -144,7 +144,13 @@
             </div>
         </div>
         <button id="comprobar_level1.2" class="buttonQuestion" style="margin: auto;" @click="verification1_2();">Comprobar</button>
-        <button id="next_level1.2" class="buttonQuestion" style="margin: auto; display: none;" type="button" @click="setLevel1(); setLevel2()">NEXT</button>
+        <button id="next_level1.2" class="buttonQuestion" style="margin: auto; display: none;" type="button" @click="TogglePopup('buttonTrigger')">NEXT</button>
+        <Popup 
+			v-if="popupTriggers.buttonTrigger" 
+			:TogglePopup="() => TogglePopup('buttonTrigger')">
+			<h2>¿Qué es el insomnio tecnológico?</h2>
+            <p>El insomnio tecnológico es una nueva enfermedad emergente que se basa en la dificultad</p>
+		</Popup>
     </div>
     <p id="gap" style="color: red; padding-top: 20px; display: none"><strong>Debes rellenar todos los huecos</strong></p>
 </template>
@@ -152,6 +158,8 @@
 
 <script>
     import { ref } from 'vue'
+    import Popup1 from './components/Popup1.vue';
+
     export default{
         setup() {
             const items1 = ref([
@@ -203,12 +211,23 @@
                 }                  
             }
 
+            const popupTriggers = ref({
+                buttonTrigger: false,
+                timedTrigger: false
+            });
+            const TogglePopup = (trigger) => {
+                popupTriggers.value[trigger] = !popupTriggers.value[trigger]
+            }
+
             return {
                 getList1,
                 getList2,
                 onDrop1,
                 onDrop2,
                 startDrag,
+                Popup1,
+                popupTriggers,
+                TogglePopup
             }
         },
         methods: {
