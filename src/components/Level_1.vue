@@ -158,7 +158,9 @@
 
 <script>
     import { ref } from 'vue'
-    import Popup1 from './components/Popup1.vue';
+    import Popup_1 from './components/Popup_1.vue'
+    
+    
 
     export default{
         setup() {
@@ -225,7 +227,7 @@
                 onDrop1,
                 onDrop2,
                 startDrag,
-                Popup1,
+                Popup_1,
                 popupTriggers,
                 TogglePopup
             }
