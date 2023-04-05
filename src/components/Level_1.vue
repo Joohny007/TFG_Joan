@@ -144,21 +144,38 @@
             </div>
         </div>
         <button id="comprobar_level1.2" class="buttonQuestion" style="margin: auto;" @click="verification1_2();">Comprobar</button>
-        <button id="next_level1.2" class="buttonQuestion" style="margin: auto; display: none;" type="button" @click="TogglePopup('buttonTrigger')">NEXT</button>
-        <Popup 
+        <a id="popup1_link" class="button" href="#popup1" style="padding: 10px; margin: auto; display: none;" type="button">NEXT</a>
+
+        
+        <!-- <Popup_1 
 			v-if="popupTriggers.buttonTrigger" 
-			:TogglePopup="() => TogglePopup('buttonTrigger')">
+			:togglePopup="() => togglePopup('buttonTrigger')">
 			<h2>¿Qué es el insomnio tecnológico?</h2>
             <p>El insomnio tecnológico es una nueva enfermedad emergente que se basa en la dificultad</p>
-		</Popup>
+		</Popup_1> -->
     </div>
     <p id="gap" style="color: red; padding-top: 20px; display: none"><strong>Debes rellenar todos los huecos</strong></p>
+    <div id="popup1" class="overlay">
+        <div class="popup">
+            <h2>¿Qué es el insomnio tecnológico?</h2>
+            <div class="content">
+                <p>El <strong>insomnio tecnológico</strong> es una nueva enfermedad emergente que se basa en la dificultad para iniciar y mantener el sueño debido al uso excesivo e inadecuado de las nuevas tecnologías.</p>
+
+                <p>Nuestro organismo tiene un <strong>“reloj biológico”</strong> principal que se encarga de regular el sueño. Este reloj está formado por células del cerebro que se comunican por impulsos eléctricos y controla los llamados ritmos circadianos.</p>
+
+                    <p>Los <strong>ritmos circadianos</strong> son una serie de cambios tanto físicos como psíquicos que siguen un ciclo de veinticuatro horas. Están directamente relacionados con la luz y la oscuridad. Cuando está brillante afuera, nos volvemos más alerta. Cuando oscurece, el cuerpo produce una hormona llamada <strong>melatonina</strong> que induce el sueño.</p>
+
+                        <p>Las pantallas de los aparatos electrónicos emiten la conocida <strong>luz azul</strong>, la cual entra por nuestra retina, impidiendo la liberación de melatonina y provocando de esta manera dificultades de sueño. Es decir, al mirar el móvil o la tablet por la noche lo que estamos haciendo es hacer que nuestro cerebro entienda que aún es de día y por lo tanto, retrasando la melatonina, la hormona del sueño, lo que genera dificultad para dormir.</p>
+
+                <button id="next_level1.2" class="button" href="#popup1" style="margin: auto;" type="button" @click="setLevel1(); setLevel2()">NEXT</button>
+            </div>
+        </div>
+    </div>
 </template>
 
 
 <script>
     import { ref } from 'vue'
-    import Popup_1 from './components/Popup_1.vue'
     
     
 
@@ -198,7 +215,7 @@
             const onDrop1 = (event, list) => {
                 const itemID = event.dataTransfer.getData('itemID')
                 var item = null;
-                if(getList1(list).length < 1 || list == 1){
+                if(getList1(list).length < 1 || list == 11){
                   item = items1.value.find((item) => item.id == itemID);
                   item.list = list;
                 }                  
@@ -213,23 +230,12 @@
                 }                  
             }
 
-            const popupTriggers = ref({
-                buttonTrigger: false,
-                timedTrigger: false
-            });
-            const TogglePopup = (trigger) => {
-                popupTriggers.value[trigger] = !popupTriggers.value[trigger]
-            }
-
             return {
                 getList1,
                 getList2,
                 onDrop1,
                 onDrop2,
                 startDrag,
-                Popup_1,
-                popupTriggers,
-                TogglePopup
             }
         },
         methods: {
@@ -294,7 +300,7 @@
                     document.getElementById(4).children[0].classList.add('wrong')
                     wrongAns += 1
                 }
-                this.nextLevel('comprobar_level1.2', 'next_level1.2')
+                this.nextLevel('comprobar_level1.2', 'popup1_link')
                 document.getElementById('gap').style.display="none"
                 this.$store.commit('setCorrectAnswers', correctAns)
                 this.$store.commit('setWrongAnswers', wrongAns)

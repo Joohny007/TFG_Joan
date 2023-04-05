@@ -31,8 +31,46 @@
             <p>Mal rendimiento académico</p>
         </div>
     </div>
-    <button id="comprobar_level2" class="buttonQuestion" style="margin: auto;" @click="verification2(); nextLevel('comprobar_level2', 'next_level2')">Comprobar</button>
-    <button id="next_level2" class="buttonQuestion" style="margin: auto; display: none;" type="button" @click="setLevel2(); setLevel3()">NEXT</button>
+    <button id="comprobar_level2" class="buttonQuestion" style="margin: auto;" @click="verification2(); nextLevel('comprobar_level2', 'popup2_link')">Comprobar</button>
+    <a id="popup2_link" class="button" href="#popup2" style="padding: 10px; margin: auto; display: none;" type="button">NEXT</a>
+
+    <div id="popup2" class="overlay">
+        <div class="popup">
+            <h2>Consecuencias</h2>
+            <div class="content">
+                <p>La tecnología ayuda a facilitar la educación, la comunicación y el entretenimiento, y los dispositivos tecnológicos se han convertido en un elemento crucial para navegar la vida diaria. Sin embargo, algunos dispositivos pueden interrumpir o afectar negativamente a nuestros ciclos de sueño.</p>
+
+                <p>Como por ejemplo puede causar sobreestimulación antes de acostarse y, si no se maneja adecuadamente, reducir el tiempo de sueño. A continuación os dejo una lista  de las consecuencias que puede llegar a tener una persona:</p>
+                <ol class="alternating-colors">
+                    <li>
+                        <strong>Reducción del tiempo de sueño</strong>
+                        
+                    </li>
+                    <li>
+                        <strong>Depresión</strong>
+                        
+                    </li>
+                    <li>
+                        <strong>Cansancio</strong>
+                        
+                    </li>
+                    <li>
+                        <strong>Mal humor</strong>
+                        
+                    </li>
+                    <li>
+                        <strong>Mal rendimiento académico</strong>
+                        
+                    </li>
+                    <li>
+                        <strong>Alto riesgo de hipertensión y enfermedad cardiovascular</strong>
+                        
+                    </li>
+                </ol>
+                <button id="next_level2" class="button" href="#popup2" style="margin: auto;" type="button" @click="setLevel2(); setLevel3()">NEXT</button>
+            </div>
+        </div>
+    </div>
 </template>
 
 <script>
@@ -92,3 +130,54 @@
         }
     }
 </script>
+<style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+body { 
+  display: flex !important;
+  flex-direction: column !important;
+  max-width: 420px !important;
+  padding: 32px !important;
+  margin: 60px auto !important;
+  border: 1px solid #eee !important;
+  box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.06) !important;
+}
+
+* {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizelegibility;
+	letter-spacing: -0.25px;
+}
+ ol {
+	padding-left: 50px;
+}
+ li {
+	color: #4f4f4f;
+	padding-left: 16px;
+	margin-top: 24px;
+	position: relative;
+	font-size: 16px;
+	line-height: 22px;
+}
+ li:before {
+	content: '';
+	display: block;
+	height: 42px;
+	width: 42px;
+	border-radius: 50%;
+	border: 2px solid #ddd;
+	position: absolute;
+	top: -12px;
+	left: -46px;
+}
+ strong {
+	color: #292929;
+}
+ ol.alternating-colors li:nth-child(odd):before {
+	border-color: #0bad02;
+}
+ ol.alternating-colors li:nth-child(even):before {
+	border-color: #2378d5;
+}
+</style>

@@ -108,7 +108,7 @@
 }
 
 button p {
-    margin-top: 46px;
+    /* margin-top: 46px; */
     margin-bottom: 0;
 }
 
@@ -119,7 +119,7 @@ button.show p { margin: 0; }
 }
 
 .box button.show span {
-    display: block;
+    display: inline-block;
 }
 
 .box button.match {

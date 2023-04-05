@@ -8,16 +8,18 @@
 </template>
 
 <script>
-    export default {
+  export default {
     name: 'Intro_game',
     methods: {
-    setLevel1: function(){
-      this.$store.commit('setLevel1', !this.$store.getters.getLevel1)
-    },
-    setStartGame: function(){
-      this.$store.commit('setStartGame', !this.$store.getters.getStartGame)
-    },
-  }
-
+      setLevel1: function(){
+        this.$store.commit('setLevel1', !this.$store.getters.getLevel1)
+      },
+      setStartGame: function(){
+        this.$store.commit('setStartGame', !this.$store.getters.getStartGame)
+      },
+      setTestComponent: function(){
+        this.$store.commit('setTestComponent', !this.$store.getters.getTestComponent)
+      },
+    }
   }
 </script>

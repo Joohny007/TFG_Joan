@@ -9,6 +9,7 @@ export default createStore({
         level1: false,
         level2: false,
         level3: false,
+        testComponent: false,
         ID: 0,
         testMode: true,
         correctAnswers: 0,
@@ -48,6 +49,9 @@ export default createStore({
         getWrongAnswers: state =>{
             return state.wrongAnswers
         },
+        getTestComponent: state =>{
+            return state.testComponent
+        },
     },
     mutations: {
         setPreForm(state, formulary){
@@ -76,6 +80,9 @@ export default createStore({
         },
         setWrongAnswers(state, valor){
             state.wrongAnswers += valor
+        },
+        setTestComponent(state, valor){
+            state.testComponent = valor;
         },
     }
 })
