@@ -9,6 +9,7 @@ export default createStore({
         level1: false,
         level2: false,
         level3: false,
+        finalGame: false,
         testComponent: false,
         ID: 0,
         testMode: true,
@@ -36,6 +37,9 @@ export default createStore({
         },
         getLevel3: state=>{
             return state.level3;
+        },
+        getFinalGame: state=>{
+            return state.finalGame;
         },
         getID: state =>{
             return state.ID
@@ -71,6 +75,9 @@ export default createStore({
         },
         setLevel3(state, valor){
             state.level3 = valor;
+        },
+        setFinalGame(state, valor){
+            state.finalGame = valor;
         },
         setID(state, ID){
             state.ID = ID;

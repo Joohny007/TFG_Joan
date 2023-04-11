@@ -17,7 +17,45 @@
             </div>
         </div>
     </div>
-    <button id="next_level3" class="buttonQuestion" style="margin: auto; display: none;" type="button" @click="setLevel3()">NEXT</button>
+
+    <a id="popup3_link" class="button" href="#popup3" style="padding: 10px; margin: auto; display: none;" type="button">NEXT</a>
+    <div id="popup3" class="overlay">
+        <div class="popup">
+            <h2>Soluciones</h2>
+            <div class="content">
+                <p>Existen soluciones farmacológicas como no farmacológicas. En este trabajo de investigación, me gustaría centrarme en las no farmacológicas ya que se puede combatir el insomnio tecnológico con simples pasos.</p>
+
+                <p>Para este fin, me veo obligado a recurrir a la <strong>higiene del sueño</strong>, la cual consiste en una serie de prácticas que consisten en alejar o evitar todo aquello que te puede alterar el sueño y promover aquellas cosas que te ayudan a dormir:</p>
+                <ol class="alternating-colors">
+                    <li>
+                        <strong>Dejar el móvil o la tablet mínimo 30 minutos antes de acostarnos.</strong>
+                        
+                    </li>
+                    <li>
+                        <strong>Evitar siestas durante el dia</strong>
+                        
+                    </li>
+                    <li>
+                        <strong>Evitar cenar tarde por la noche</strong>
+                        
+                    </li>
+                    <li>
+                        <strong>Evitar hacer ejercicio tarde</strong>
+                        
+                    </li>
+                    <li>
+                        <strong>Evitar sustancias que alteren el sueño (alcohol, cafeína, nicotina)</strong>
+                        
+                    </li>
+                    <li>
+                        <strong>Propiciar un buen entorno para el sueño (oscuro, fresco, tranquilo)</strong>
+                        
+                    </li>
+                </ol>
+                <button id="next_level2" class="button" style="margin: auto;" type="button" @click="setLevel3(); setFinalGame()">NEXT</button>
+            </div>
+        </div>
+    </div>
     </template>
     
     <script>
@@ -61,7 +99,7 @@
                     this.currVal = null;
                     this.correctMatches.push(this.currVal, _value)
                     if(this.correctMatches.length == 12){
-                        document.getElementById('next_level3').style.display="block"
+                        document.getElementById('popup3_link').style.display="inline-block"
                     }
                         
                 } else {
@@ -77,7 +115,15 @@
 
                     this.currVal = null;
                 }
-            }
+            },
+
+            setLevel3: function(){
+                this.$store.commit('setLevel3', !this.$store.getters.getLevel3)
+            },
+
+            setFinalGame: function(){
+                this.$store.commit('setFinalGame', !this.$store.getters.getFinalGame)
+            },
         }
     }
     </script>
@@ -125,5 +171,53 @@ button.show p { margin: 0; }
 .box button.match {
     border-color: green;
 }
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
+body { 
+  display: flex !important;
+  flex-direction: column !important;
+  max-width: 420px !important;
+  padding: 32px !important;
+  margin: 60px auto !important;
+  border: 1px solid #eee !important;
+  box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.06) !important;
+}
+
+* {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizelegibility;
+	letter-spacing: -0.25px;
+}
+ ol {
+	padding-left: 50px;
+}
+ li {
+	color: #4f4f4f;
+	padding-left: 16px;
+	margin-top: 24px;
+	position: relative;
+	font-size: 16px;
+	line-height: 22px;
+}
+ li:before {
+	content: '';
+	display: block;
+	height: 42px;
+	width: 42px;
+	border-radius: 50%;
+	border: 2px solid #ddd;
+	position: absolute;
+	top: -12px;
+	left: -46px;
+}
+ strong {
+	color: #292929;
+}
+ ol.alternating-colors li:nth-child(odd):before {
+	border-color: #0bad02;
+}
+ ol.alternating-colors li:nth-child(even):before {
+	border-color: #2378d5;
+}
 </style>

@@ -1,12 +1,17 @@
 <template>
    <div id="introform">
-        <p>Hola {{msgJuan}} my name is Joan and I want to introduce you to my TFG 😁</p>
+        <p>Hola!</p>
+        <p>Mi nombre es Joan y este minijuego que estás viendo es mi parte práctica de mi trabajo final de carrera.
+          Por este motivo os agradezco vuestro tiempo y esfuerzo en darle un par de minutos a este juego cortito.
+        </p>
+        <p>A continuación os aparecerá un test muy corto en el que podeis responder con total sinceridad, vuestras respuestas son <strong>anónimas</strong>.</p>
+        <p>Gracias de antemano!😁</p>
         <button class="" style="margin: auto;" type="button" @click="nextQuestion('introform', 'startform'); skipForm('none', 'skip')">NEXT</button>
     </div>
   <button id="skip" v-if="this.$store.getters.getTestMode" class="" style="margin: auto; display: none;" type="button" @click="setStartForm(); setStartGame(); skipForm('skip', 'none')">SKIP</button>
   <form style>
     <div id="startform" style="display:none">
-      <h1 class="text-center text-primary">Cuestionario Inicial</h1>
+      <h1 class="text-center text-primary" style="padding-bottom: 10px;">Cuestionario Inicial</h1>
       <div id="genero" class="formRadio radioText">
         <h5>¿Con qué género te identificas?</h5>
         <input type="radio" id="mujer" name="genero" value="mujer" required>

@@ -21,6 +21,9 @@ body {
   .formRadio input[type="radio"]{
     display: none;
   }
+  .formRadio input[type="radio"]:hover + label{
+    background-color: #11c3cf;
+  }
   .formRadio input[type="radio"] + label {
     border-radius: 15px;
     margin: auto;

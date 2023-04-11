@@ -11,6 +11,7 @@
           <Level_2 v-if="this.$store.getters.getLevel2"></Level_2>
           <Level_3 v-if="this.$store.getters.getLevel3"></Level_3>
           <TestComponent v-if="this.$store.getters.getTestComponent"></TestComponent>
+          <FinalGame v-if="this.$store.getters.getFinalGame"></FinalGame>
         </div>
       </div>
     </div>
@@ -24,6 +25,7 @@ import Level_1 from './components/Level_1.vue'
 import Level_2 from './components/Level_2.vue'
 import Level_3 from './components/Level_3.vue'
 import TestComponent from './components/TestComponent.vue'
+import FinalGame from './components/FinalGame.vue'
 
 
 export default {
@@ -43,6 +45,7 @@ export default {
     Level_2,
     Level_3,
     TestComponent,
+    FinalGame,
   }
 }
 </script>

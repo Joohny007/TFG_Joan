@@ -167,7 +167,7 @@
 
                         <p>Las pantallas de los aparatos electrónicos emiten la conocida <strong>luz azul</strong>, la cual entra por nuestra retina, impidiendo la liberación de melatonina y provocando de esta manera dificultades de sueño. Es decir, al mirar el móvil o la tablet por la noche lo que estamos haciendo es hacer que nuestro cerebro entienda que aún es de día y por lo tanto, retrasando la melatonina, la hormona del sueño, lo que genera dificultad para dormir.</p>
 
-                <button id="next_level1.2" class="button" href="#popup1" style="margin: auto;" type="button" @click="setLevel1(); setLevel2()">NEXT</button>
+                <button id="next_level1.2" class="button" style="margin: auto;" type="button" @click="setLevel1(); setLevel2()">NEXT</button>
             </div>
         </div>
     </div>

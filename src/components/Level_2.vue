@@ -67,7 +67,7 @@
                         
                     </li>
                 </ol>
-                <button id="next_level2" class="button" href="#popup2" style="margin: auto;" type="button" @click="setLevel2(); setLevel3()">NEXT</button>
+                <button id="next_level2" class="button" style="margin: auto;" type="button" @click="setLevel2(); setLevel3()">NEXT</button>
             </div>
         </div>
     </div>
