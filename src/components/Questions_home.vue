@@ -1,12 +1,13 @@
 <template>
    <div id="introform">
-        <p>Hola!</p>
+        <p class="title">BIENVENIDOS A MI TRABAJO!</p>
         <p>Mi nombre es Joan y este minijuego que estás viendo es mi parte práctica de mi trabajo final de carrera.
           Por este motivo os agradezco vuestro tiempo y esfuerzo en darle un par de minutos a este juego cortito.
         </p>
         <p>A continuación os aparecerá un test muy corto en el que podeis responder con total sinceridad, vuestras respuestas son <strong>anónimas</strong>.</p>
         <p>Gracias de antemano!😁</p>
-        <button class="" style="margin: auto;" type="button" @click="nextQuestion('introform', 'startform'); skipForm('none', 'skip')">NEXT</button>
+        <button class="button-56" style="margin: auto;" type="button" role="button" @click="nextQuestion('introform', 'startform'); skipForm('none', 'skip')">NEXT</button>
+        
     </div>
   <button id="skip" v-if="this.$store.getters.getTestMode" class="" style="margin: auto; display: none;" type="button" @click="setStartForm(); setStartGame(); skipForm('skip', 'none')">SKIP</button>
   <form style>
@@ -20,7 +21,7 @@
         <label for="hombre">Hombre</label>
         <input type="radio" id="otro" name="genero" value="otro">
         <label for="otro">Otro</label>
-        <button class="buttonQuestion" style="margin: auto;" type="button" @click="nextQuestion('genero', 'edad')">NEXT</button>
+        <button class="button-56 mg-3" style="margin: auto;" type="button" @click="nextQuestion('genero', 'edad')">NEXT</button>
       </div>
     </div>
 
@@ -32,7 +33,7 @@
       <label for="rango2">De 14 a 17</label>
       <input type="radio" id="rango3" name="edad" value="Más de 18">
       <label for="rango3">Más de 18</label>
-      <button class="buttonQuestion" style="margin: auto;" type="button" @click="nextQuestion('edad', 'question1')">NEXT</button>
+      <button class="button-56 mg-3" style="margin: auto;" type="button" @click="nextQuestion('edad', 'question1')">NEXT</button>
     </div>
 
     <div id="question1" class="formRadio radioText" style="display:none">
@@ -43,7 +44,7 @@
       <label for="1.2">Entre 1 y 3 horas</label>
       <input type="radio" id="1.3" name="question1" value="Más de 3 horas">
       <label for="1.3">Más de 3 horas</label>
-      <button class="buttonQuestion" style="margin: auto;" type="button" @click="nextQuestion('question1', 'question2')">NEXT</button>
+      <button class="button-56 mg-3" style="margin: auto;" type="button" @click="nextQuestion('question1', 'question2')">NEXT</button>
     </div>
 
     <div id="question2" class="formRadio radioText" style="display:none">
@@ -52,7 +53,7 @@
       <label for="2.1">Sí</label>
       <input type="radio" id="2.2" name="question2" value="No">
       <label for="2.2">No</label>
-      <button class="buttonQuestion" style="margin: auto;" type="button" @click="nextQuestion('question2', 'question3')">NEXT</button>
+      <button class="button-56 mg-3" style="margin: auto;" type="button" @click="nextQuestion('question2', 'question3')">NEXT</button>
     </div>
 
     <div id="question3" class="formRadio radioText" style="display:none">
@@ -69,7 +70,7 @@
       <label for="3.5">Leer noticias/artículos para actualizarte sobre la actualidad</label>
       <input type="radio" id="3.6" name="question3" value="Otras">
       <label for="3.6">Otras</label>
-      <button class="buttonQuestion" style="margin: auto;" type="button" @click="nextQuestion('question3', 'question4')">NEXT</button>
+      <button class="button-56 mg-3" style="margin: auto;" type="button" @click="nextQuestion('question3', 'question4')">NEXT</button>
     </div>
     
     <div id="question4" class="formRadio radioText" style="display:none">
@@ -80,7 +81,7 @@
       <label for="4.2">Entre 1 y 2 horas</label>
       <input type="radio" id="4.3" name="question4" value="Más de 2 horas">
       <label for="4.3">Más de 2 horas</label>
-      <button class="buttonQuestion" style="margin: auto;" type="button" @click="nextQuestion('question4', 'ultima')">NEXT</button>
+      <button class="button-56 mg-3" style="margin: auto;" type="button" @click="nextQuestion('question4', 'ultima')">NEXT</button>
     </div>
 
     <div id="ultima" class="formRadio radioText" style="display:none">
@@ -89,7 +90,7 @@
       <label for="ultima.1">Sí</label>
       <input type="radio" id="ultima.2" name="ultima" value="No">
       <label for="ultima.2">No</label>
-      <button class="buttonQuestion" style="margin: auto;" type="button" @click="nextQuestion('ultima','send'); setStartForm(); setStartGame()">NEXT</button>
+      <button class="button-56 mg-3" style="margin: auto;" type="button" @click="nextQuestion('ultima','send'); setStartForm(); setStartGame()">NEXT</button>
     </div>
   </form>
 
@@ -202,7 +203,11 @@
   </script>
   
   <style>
-  
+  @media (min-width: 768px) {
+  .button-56 {
+    padding: 0 40px;
+  }
+}
   </style>
   <!-- <h1>Questionari prueba</h1>
     <div id="form_box">

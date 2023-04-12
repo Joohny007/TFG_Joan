@@ -133,7 +133,7 @@
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
-body { 
+/* body { 
   display: flex !important;
   flex-direction: column !important;
   max-width: 420px !important;
@@ -141,7 +141,7 @@ body {
   margin: 60px auto !important;
   border: 1px solid #eee !important;
   box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.06) !important;
-}
+} */
 
 * {
 	-webkit-font-smoothing: antialiased;
@@ -170,9 +170,6 @@ body {
 	position: absolute;
 	top: -12px;
 	left: -46px;
-}
- strong {
-	color: #292929;
 }
  ol.alternating-colors li:nth-child(odd):before {
 	border-color: #0bad02;

@@ -3,7 +3,7 @@
     <div class="gameArea">
         <h3>{{results}}</h3>
         <h4>Current Box: {{ currVal }}</h4>
-        <div class="boxHolder" style="padding-bot: 20px;">
+        <div class="boxHolder" style="padding-bottom: 20px;">
             <div class="box"
                 v-for="(box, index) in boxData" :key="index"
                 >
@@ -134,7 +134,7 @@
   }
   .gameArea {
     width: 100%;
-    float: left;
+    float: center;
   }
   .boxHolder {
     display: block;
@@ -142,7 +142,7 @@
     margin: 0 auto;
   }
   .box {
-    width: 200px;
+    width: 25%;
     float: left  
   }
 
@@ -173,7 +173,7 @@ button.show p { margin: 0; }
 }
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
-body { 
+/* body { 
   display: flex !important;
   flex-direction: column !important;
   max-width: 420px !important;
@@ -181,7 +181,7 @@ body {
   margin: 60px auto !important;
   border: 1px solid #eee !important;
   box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.06) !important;
-}
+} */
 
 * {
 	-webkit-font-smoothing: antialiased;
@@ -211,9 +211,7 @@ body {
 	top: -12px;
 	left: -46px;
 }
- strong {
-	color: #292929;
-}
+
  ol.alternating-colors li:nth-child(odd):before {
 	border-color: #0bad02;
 }
