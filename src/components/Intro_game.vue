@@ -4,7 +4,7 @@
         <p>El <strong>primer minijuego</strong> consiste en rellenar huecos con las palabras que te aparecen arriba, así de simple.</p>
         <p>El <strong>segundo minijuego</strong> se trata de escoger (con selección múltiple) cuales crees que son las consecuencias del insomnio tecnológico.</p>
         <p>Y el <strong>último minijuego</strong> es un memory, se trata de hacer parejas.</p>
-        <button class="buttonQuestion" style="margin: auto;" type="button" @click="setStartGame(); setLevel1()">NEXT</button>
+        <button class="button-62" style="margin: auto;" type="button" @click="setStartGame(); setLevel1()">NEXT</button>
     </div>
 </template>
 

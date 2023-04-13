@@ -31,8 +31,8 @@
             <p>Mal rendimiento académico</p>
         </div>
     </div>
-    <button id="comprobar_level2" class="buttonQuestion" style="margin: auto;" @click="verification2(); nextLevel('comprobar_level2', 'popup2_link')">Comprobar</button>
-    <a id="popup2_link" class="button" href="#popup2" style="padding: 10px; margin: auto; display: none;" type="button">NEXT</a>
+    <button id="comprobar_level2" class="button-62" style="margin: auto;" @click="verification2(); nextLevel('comprobar_level2', 'popup2_link')">Comprobar</button>
+    <a id="popup2_link" class="button-62" href="#popup2" style="padding: 10px; margin: auto; display: none;" type="button">NEXT</a>
 
     <div id="popup2" class="overlay">
         <div class="popup">
@@ -67,7 +67,7 @@
                         
                     </li>
                 </ol>
-                <button id="next_level2" class="button" style="margin: auto;" type="button" @click="setLevel2(); setLevel3()">NEXT</button>
+                <button id="next_level2" class="button-62" style="margin: auto;" type="button" @click="setLevel2(); setLevel3()">NEXT</button>
             </div>
         </div>
     </div>

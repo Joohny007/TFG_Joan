@@ -16,6 +16,14 @@ strong {
   font-weight: 1000;
   font-size: xx-large;
 }
+h1 {
+  display: inline-block;
+  border-bottom: 3px solid transparent;
+  border-image: linear-gradient(0.25turn, #FBAB7E 0%, #F7CE68 100%,  rgba(56,2,155,0));
+  margin: 20px;
+  /* border-image: linear-gradient(0.25turn, rgba(255,249,34), rgba(255,0,128), rgba(56,2,155,0)); */
+  border-image-slice: 1;
+}   
 
 .general-box {
   height: 100%;
@@ -23,56 +31,41 @@ strong {
   justify-content: center;
   align-items: center;
 }
-
-.button-56 {
-  align-items: center !important;
-  background-color: #fee6e3 !important;
-  border: 2px solid #111 !important;
-  border-radius: 8px !important;
-  box-sizing: border-box !important;
-  color: #111 !important;
-  cursor: pointer !important;
-  display: flex !important;
-  font-size: 16px !important;
-  height: 48px !important;
-  justify-content: center !important;
-  line-height: 24px !important;
-  max-width: 100% !important;
-  padding: 0 25px !important;
-  position: relative !important;
-  text-align: center !important;
-  text-decoration: none !important;
-  user-select: none !important;
-  -webkit-user-select: none !important;
-  touch-action: manipulation !important;
+/* BACKGROUNDS */
+.bg-light {
+  --bs-bg-opacity: 1;
+  background-color: rgba(var(--bs-light-rgb),var(--bs-bg-opacity));
 }
 
-.button-56:after {
-  background-color: #111 !important ;
-  border-radius: 8px !important;
-  content: "" !important;
-  display: block !important;
-  height: 48px !important;
-  left: 0 !important;
-  width: 100% !important;
-  position: absolute !important;
-  top: -2px !important;
-  transform: translate(8px, 8px) !important;
-  transition: transform .2s ease-out !important;
-  z-index: -1 !important;
+/* CSS */
+.button-62 {
+  background: linear-gradient(to bottom right, #FBAB7E, #F7CE68);
+  border: 0;
+  border-radius: 12px;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 2.5;
+  outline: transparent;
+  padding: 0 1rem;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow .2s ease-in-out;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
 }
 
-.button-56:hover:after {
-  transform: translate(0, 0) !important;
+.button-62:not([disabled]):focus {
+  box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
 }
 
-.button-56:active {
-  background-color: #ffdeda !important;
-  outline: 0 !important;
-}
-
-.button-56:hover {
-  outline: 0 !important ;
+.button-62:not([disabled]):hover {
+  box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
 }
 
 /* PADDINGS */
@@ -119,26 +112,7 @@ strong {
     background-color: #11c3cf;
     /* border-color: var(--main-color); */
   }
-  .buttonQuestion {
-    background: #11c3cf;
-    color: white;
-    font-family: inherit;
-    padding: 0.35em;
-    /* padding-left: 1.2em; */
-    font-size: 17px;
-    font-weight: 500;
-    border-radius: 0.9em;
-    border: none;
-    letter-spacing: 0.05em;
-    display: flex;
-    align-items: center;
-    /* box-shadow: inset 0 0 1.6em -0.6em #714da6; */
-    overflow: hidden;
-    position: relative;
-    height: 2.8em;
-    /* padding-right: 3.3em; */
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  }
+  
   .radioText input[type="radio"] + label {
     padding: 5px 5px 5px 5px;
     margin: 12px;
@@ -168,7 +142,7 @@ strong {
   }
 
   .drag-el {
-    background-color: #3498db;
+    background-color: #fdc571;
     color: white;
     padding: 5px;
     margin-bottom: 10px;
@@ -205,19 +179,6 @@ strong {
     border: "4px solid blue";
   }
   /* --------------------------------------------- */
-  .button {
-    font-size: 1em;
-    padding: 10px;
-    color: #6ccabe;
-    border: 2px solid #06D85F;
-    border-radius: 20px/50px;
-    text-decoration: none;
-    cursor: pointer;
-    transition: all 0.3s ease-out;
-  }
-  .button:hover {
-    background: #06D85F;
-  }
   .overlay {
     position: fixed;
     top: 0;
@@ -233,7 +194,17 @@ strong {
     visibility: visible;
     opacity: 1;
   }
-  
+  .overlay_gap {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 500ms;
+    visibility: visible;
+    opacity: 1;
+  }
   .popup {
     margin: 70px auto;
     padding: 20px;
@@ -258,7 +229,27 @@ strong {
     max-height: 30%;
     overflow: auto;
   }
-  
+  .popup .close {
+    position: absolute;
+    top: 0px;
+    right: 20px;
+    transition: all 200ms;
+    font-size: 50px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+  }
+  .popup .close:hover {
+    color: #06D85F;
+  }
+  .popup-exit:link, .popup-exit:active, .popup-exit:visited, .popup-exit:hover {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    font-size: 1.7rem;
+    text-decoration: none;
+    color: #F92A2A; 
+}
   @media screen and (max-width: 700px){
     .popup{
       width: 70%;

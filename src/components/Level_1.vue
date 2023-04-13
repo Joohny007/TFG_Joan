@@ -2,7 +2,7 @@
     <h1>1r día: Qué es el insomnio tecnológico?</h1>
     <div id="level1.1">
         <div 
-            class="drop-zone-initial"
+            class="drop-zone-initial rounded"
             @drop="onDrop1($event, 11)"
             @dragenter.prevent
             @dragover.prevent
@@ -10,7 +10,7 @@
             <div 
                 v-for="item in getList1(11)" 
                 :key="item.id" 
-                class="drag-el"
+                class="drag-el rounded"
                 style="display: inline;"
                 draggable="true"
                 @dragstart="startDrag($event, item)"
@@ -22,7 +22,7 @@
         <p>El</p>
         <div 
             id="13"
-            class="drop-zone"
+            class="drop-zone rounded"
             @drop="onDrop1($event, 13)"
             @dragenter.prevent
             @dragover.prevent
@@ -30,7 +30,7 @@
             <div 
                 v-for="item in getList1(13)"
                 :key="item.id" 
-                class="drag-el"
+                class="drag-el rounded"
                 draggable="true"
                 @dragstart="startDrag($event, item)"
             >
@@ -41,7 +41,7 @@
         <p>es un</p>
         <div 
             id="12"
-            class="drop-zone"
+            class="drop-zone rounded"
             @drop="onDrop1($event, 12)"
             @dragenter.prevent
             @dragover.prevent
@@ -49,7 +49,7 @@
             <div 
                 v-for="item in getList1(12)" 
                 :key="item.id" 
-                class="drag-el" 
+                class="drag-el rounded" 
                 draggable="true" 
                 @dragstart="startDrag($event, item)"
             >
@@ -60,15 +60,15 @@
             nos despertemos demasiado temprano y no podamos volver a dormirnos.</p>
         
         <p style="display: none"><strong>Debes rellenar todos los huecos</strong></p>
-        <button id="comprobar_level1.1" class="buttonQuestion" style="margin: auto;" @click="verification1_1();">Comprobar</button>
-        <button id="next_level1.1" class="buttonQuestion" style="margin: auto; display: none;" type="button" @click="nextLevel('level1.1', 'level1.2');">NEXT</button>
+        <button id="comprobar_level1.1" class="button-62" style="margin: auto;" @click="verification1_1();">Comprobar</button>
+        <button id="next_level1.1" class="button-62" style="margin: auto; display: none;" type="button" @click="nextLevel('level1.1', 'level1.2');">NEXT</button>
 
     </div>
 
 
     <div id="level1.2" style="display: none;">
         <div 
-            class="drop-zone-initial"
+            class="drop-zone-initial rounded"
             @drop="onDrop2($event, 1)"
             @dragenter.prevent
             @dragover.prevent
@@ -76,7 +76,7 @@
             <div 
                 v-for="item in getList2(1)" 
                 :key="item.id" 
-                class="drag-el"
+                class="drag-el rounded"
                 style="display: inline;"
                 draggable="true"
                 @dragstart="startDrag($event, item)"
@@ -89,7 +89,7 @@
         <p>Cuando revisamos el móvil de noche, la luz de nuestras pantallas emite una radiación conocida como </p>
         <div 
             id="3"
-            class="drop-zone"
+            class="drop-zone rounded"
             @drop="onDrop2($event, 3)"
             @dragenter.prevent
             @dragover.prevent
@@ -97,7 +97,7 @@
             <div 
                 v-for="item in getList2(3)" 
                 :key="item.id" 
-                class="drag-el"
+                class="drag-el rounded"
                 draggable="true"
                 @dragstart="startDrag($event, item)"
             >
@@ -109,7 +109,7 @@
         <p>, la cual inhibe la liberación de </p>
         <div 
             id="2"
-            class="drop-zone"
+            class="drop-zone rounded"
             @drop="onDrop2($event, 2)"
             @dragenter.prevent
             @dragover.prevent
@@ -117,7 +117,7 @@
             <div 
                 v-for="item in getList2(2)" 
                 :key="item.id" 
-                class="drag-el" 
+                class="drag-el rounded" 
                 draggable="true" 
                 @dragstart="startDrag($event, item)"
             >
@@ -128,7 +128,7 @@
         <p>en nuestro organismo. A esta última se la conoce como la hormona encargada de vigilar nuestro ciclo de sueño. Todo esto ocurre cuando miramos alguna pantalla por la noche, causandonos dificultades de sueño, a esto se le llama</p>
         <div 
             id="4"
-            class="drop-zone"
+            class="drop-zone rounded"
             @drop="onDrop2($event, 4)"
             @dragenter.prevent
             @dragover.prevent
@@ -136,15 +136,15 @@
             <div 
                 v-for="item in getList2(4)" 
                 :key="item.id" 
-                class="drag-el" 
+                class="drag-el rounded" 
                 draggable="true" 
                 @dragstart="startDrag($event, item)"
             >
                 {{ item.title }}
             </div>
         </div>
-        <button id="comprobar_level1.2" class="buttonQuestion" style="margin: auto;" @click="verification1_2();">Comprobar</button>
-        <a id="popup1_link" class="button" href="#popup1" style="padding: 10px; margin: auto; display: none;" type="button">NEXT</a>
+        <button id="comprobar_level1.2" class="button-62" style="margin: auto;" @click="verification1_2();">Comprobar</button>
+        <a id="popup1_link" class="button-62" href="#popup1" style="margin: auto; display: none;" type="button">NEXT</a>
 
         
         <!-- <Popup_1 
@@ -154,7 +154,15 @@
             <p>El insomnio tecnológico es una nueva enfermedad emergente que se basa en la dificultad</p>
 		</Popup_1> -->
     </div>
-    <p id="gap" style="color: red; padding-top: 20px; display: none"><strong>Debes rellenar todos los huecos</strong></p>
+    <div id="gap_lv1" class="overlay" style="padding-top: 20px;">
+        <div class="popup">
+            <a href="#" class="close" @click="closePopup()">&times;</a>
+            <p class="title">Atención!</p>
+            <div class="content">
+                <p><strong>Debes rellenar todos los huecos</strong></p>
+            </div>
+        </div>
+    </div>
     <div id="popup1" class="overlay">
         <div class="popup">
             <h2>¿Qué es el insomnio tecnológico?</h2>
@@ -167,7 +175,7 @@
 
                         <p>Las pantallas de los aparatos electrónicos emiten la conocida <strong>luz azul</strong>, la cual entra por nuestra retina, impidiendo la liberación de melatonina y provocando de esta manera dificultades de sueño. Es decir, al mirar el móvil o la tablet por la noche lo que estamos haciendo es hacer que nuestro cerebro entienda que aún es de día y por lo tanto, retrasando la melatonina, la hormona del sueño, lo que genera dificultad para dormir.</p>
 
-                <button id="next_level1.2" class="button" style="margin: auto;" type="button" @click="setLevel1(); setLevel2()">NEXT</button>
+                <button id="next_level1.2" class="button-62" style="margin: auto;" type="button" @click="setLevel1(); setLevel2()">NEXT</button>
             </div>
         </div>
     </div>
@@ -262,12 +270,11 @@
                     wrongAns += 1
                 }
                 this.nextLevel('comprobar_level1.1', 'next_level1.1')
-                document.getElementById('gap').style.display="none"
                 this.$store.commit('setCorrectAnswers', correctAns)
                 this.$store.commit('setWrongAnswers', wrongAns)
             }
             else{
-                document.getElementById('gap').style.display="block"
+                document.getElementById('gap_lv1').classList.add('overlay_gap')
             }
           },
 
@@ -297,22 +304,24 @@
                     correctAns += 1
 
                 }else{
-                    document.getElementById(4).children[0].classList.add('wrong')
+                    document.getElementById('gap_lv1').classList.add('overlay_gap')
                     wrongAns += 1
                 }
                 this.nextLevel('comprobar_level1.2', 'popup1_link')
-                document.getElementById('gap').style.display="none"
                 this.$store.commit('setCorrectAnswers', correctAns)
                 this.$store.commit('setWrongAnswers', wrongAns)
             }
             else{
-                document.getElementById('gap').style.display="block"
+                document.getElementById('gap_lv1').classList.add('overlay_gap')
             }
+          },
+          closePopup: function() {
+            document.getElementById('gap_lv1').classList.remove('overlay_gap')
           },
 
           nextLevel: function(id, nextId){
             document.getElementById(id).style.display="none"
-            document.getElementById(nextId).style.display="block"
+            document.getElementById(nextId).style.display="inline-block"
           },
 
           setLevel2: function(){

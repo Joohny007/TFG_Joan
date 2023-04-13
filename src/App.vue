@@ -1,10 +1,9 @@
 <template>
   <div id="app" class="h-100">
-    <button class="button-56"></button>
     <div class="container-fluid h-100">
       <!-- <img v-bind:src="require('./images/trump_mio.png')" alt=""> -->
-      <div class="general-box">
-        <div class="col-md-6 shadow rounded px-5 py-4 bg-light">
+      <div class="general-box rounded">
+        <div class="col-md-8 shadow rounded px-5 py-4 bg-light">
           <!-- <TFG_Intro/> -->
           <Questions_home v-if="this.$store.getters.getStartForm"/>
           <Intro_game v-if="this.$store.getters.getStartGame"/>

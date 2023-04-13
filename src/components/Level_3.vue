@@ -18,7 +18,7 @@
         </div>
     </div>
 
-    <a id="popup3_link" class="button" href="#popup3" style="padding: 10px; margin: auto; display: none;" type="button">NEXT</a>
+    <a id="popup3_link" class="button-62" href="#popup3" style="padding: 10px; margin: auto; display: none;" type="button">NEXT</a>
     <div id="popup3" class="overlay">
         <div class="popup">
             <h2>Soluciones</h2>
@@ -52,7 +52,7 @@
                         
                     </li>
                 </ol>
-                <button id="next_level2" class="button" style="margin: auto;" type="button" @click="setLevel3(); setFinalGame()">NEXT</button>
+                <button id="next_level2" class="button-62" style="margin: auto;" type="button" @click="setLevel3(); setFinalGame()">NEXT</button>
             </div>
         </div>
     </div>
