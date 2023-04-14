@@ -1,24 +1,28 @@
 <template>
-    <h1>3r día: Soluciones</h1>
-    <div class="gameArea">
-        <h3>{{results}}</h3>
-        <h4>Current Box: {{ currVal }}</h4>
-        <div class="boxHolder" style="padding-bottom: 20px;">
-            <div class="box"
-                v-for="(box, index) in boxData" :key="index"
-                >
-                <button
-                    :id="'box_' + index"
-                    :class="box.show ? 'show' : '' "
-                    @click="showBox(index, box.value)">
-                    <p v-if="!box.show">Click Here</p>
-                    <span>{{ box.value }}</span>
-                </button>
+    <div class="general-box rounded">
+        <div class="col-md-8 shadow rounded px-5 py-4 bg-light">
+            <h1>3r día: Soluciones</h1>
+            <div class="gameArea">
+                <h3>{{results}}</h3>
+                <h4>Current Box: {{ currVal }}</h4>
+                <div class="boxHolder">
+                    <div class="box"
+                        v-for="(box, index) in boxData" :key="index"
+                        >
+                        <button
+                            :id="'box_' + index"
+                            :class="box.show ? 'show' : '' "
+                            style="margin-bottom: 15px;"
+                            @click="showBox(index, box.value)">
+                            <p v-if="!box.show">Click Here</p>
+                            <span>{{ box.value }}</span>
+                        </button>
+                    </div>
+                </div>
             </div>
+            <a id="popup3_link" class="button-62" href="#popup3" style="padding: 10px; margin: auto; display: none;" type="button">NEXT</a>
         </div>
     </div>
-
-    <a id="popup3_link" class="button-62" href="#popup3" style="padding: 10px; margin: auto; display: none;" type="button">NEXT</a>
     <div id="popup3" class="overlay">
         <div class="popup">
             <h2>Soluciones</h2>

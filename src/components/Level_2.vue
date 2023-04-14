@@ -1,38 +1,42 @@
 <template>
-    <h1>2o día: Consecuencias</h1>  
+    <div class="general-box rounded">
+        <div class="col-md-8 shadow rounded px-5 py-4 bg-light">
+            <h1>2o día: Consecuencias</h1>  
 
-    <div class="row">
-        <div class="column">
-            <input id="estrés" type="image" v-bind:src="require('../images/estrés.jpg')" alt="" style="width: 100%;" @click="mark('estrés')">
-            <p>Estrés</p>
-        </div>
-        <div class="column">
-            <input id="cansancio" type="image" v-bind:src="require('../images/cansancio.png')" alt="" style="width: 100%;" @click="mark('cansancio')">
-            <p>Cansancio</p>
-        </div>
-        <div class="column">
-            <input id="depresión" type="image" v-bind:src="require('../images/estrés.jpg')" alt="" style="width: 100%;" @click="mark('depresión')">
-            <p>Depresión</p>
-        </div>
-        <div class="column">
-            <input id="mal_humor" type="image" v-bind:src="require('../images/mal humor.jpg')" alt="" style="width: 100%;" @click="mark('mal_humor')">
-            <p>Mal humor</p>
-        </div>
-        <div class="column">
-            <input id="nervios" type="image" v-bind:src="require('../images/estrés.jpg')" alt="" style="width: 100%;" @click="mark('nervios')">
-            <p>Nervios</p>
-        </div>
-        <div class="column">
-            <input id="hambre" type="image" v-bind:src="require('../images/hambre.jpg')" alt="" style="width: 100%;" @click="mark('hambre')">
-            <p>Hambre</p>
-        </div>
-        <div class="column">
-            <input id="malasnotas" type="image" v-bind:src="require('../images/malas notas.jpg')" alt="" style="width: 100%;" @click="mark('malasnotas')">
-            <p>Mal rendimiento académico</p>
+            <div class="row">
+                <div class="column">
+                    <input id="estrés" type="image" v-bind:src="require('../images/estrés.jpg')" alt="" style="width: 100%; height: auto;" @click="mark('estrés')">
+                    <p>Estrés</p>
+                </div>
+                <div class="column">
+                    <input id="cansancio" type="image" v-bind:src="require('../images/cansancio.png')" alt="" style="width: 100%; height: auto;" @click="mark('cansancio')">
+                    <p>Cansancio</p>
+                </div>
+                <div class="column">
+                    <input id="depresión" type="image" v-bind:src="require('../images/estrés.jpg')" alt="" style="width: 100%; height: auto;" @click="mark('depresión')">
+                    <p>Depresión</p>
+                </div>
+                <div class="column">
+                    <input id="mal_humor" type="image" v-bind:src="require('../images/mal humor.jpg')" alt="" style="width: 100%; height: auto;" @click="mark('mal_humor')">
+                    <p>Mal humor</p>
+                </div>
+                <div class="column">
+                    <input id="nervios" type="image" v-bind:src="require('../images/estrés.jpg')" alt="" style="width: 100%; height: auto;" @click="mark('nervios')">
+                    <p>Nervios</p>
+                </div>
+                <div class="column">
+                    <input id="malasnotas" type="image" v-bind:src="require('../images/malas notas.jpg')" alt="" style="width: 100%; height: auto;" @click="mark('malasnotas')">
+                    <p>Mal rendimiento académico</p>
+                </div>
+                <div class="column">
+                    <input id="hambre" type="image" v-bind:src="require('../images/hambre.jpg')" alt="" style="width: 100%; height: auto;" @click="mark('hambre')">
+                    <p>Hambre</p>
+                </div>
+            </div>
+            <button id="comprobar_level2" class="button-62" style="margin: auto;" @click="verification2(); nextLevel('comprobar_level2', 'popup2_link')">Comprobar</button>
+            <a id="popup2_link" class="button-62" href="#popup2" style="padding: 10px; margin: auto; display: none;" type="button">NEXT</a>
         </div>
     </div>
-    <button id="comprobar_level2" class="button-62" style="margin: auto;" @click="verification2(); nextLevel('comprobar_level2', 'popup2_link')">Comprobar</button>
-    <a id="popup2_link" class="button-62" href="#popup2" style="padding: 10px; margin: auto; display: none;" type="button">NEXT</a>
 
     <div id="popup2" class="overlay">
         <div class="popup">
@@ -118,7 +122,7 @@
 
             nextLevel: function(id, nextId){
                 document.getElementById(id).style.display="none"
-                document.getElementById(nextId).style.display="block"
+                document.getElementById(nextId).style.display="inline-block"
             },
 
             setLevel2: function(){

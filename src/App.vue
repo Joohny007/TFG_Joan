@@ -2,18 +2,16 @@
   <div id="app" class="h-100">
     <div class="container-fluid h-100">
       <!-- <img v-bind:src="require('./images/trump_mio.png')" alt=""> -->
-      <div class="general-box rounded">
-        <div class="col-md-8 shadow rounded px-5 py-4 bg-light">
-          <!-- <TFG_Intro/> -->
-          <Questions_home v-if="this.$store.getters.getStartForm"/>
-          <Intro_game v-if="this.$store.getters.getStartGame"/>
-          <Level_1 v-if="this.$store.getters.getLevel1"></Level_1>
-          <Level_2 v-if="this.$store.getters.getLevel2"></Level_2>
-          <Level_3 v-if="this.$store.getters.getLevel3"></Level_3>
-          <TestComponent v-if="this.$store.getters.getTestComponent"></TestComponent>
-          <FinalGame v-if="this.$store.getters.getFinalGame"></FinalGame>
-        </div>
-      </div>
+
+      <!-- <TFG_Intro/> -->
+      <Questions_home v-if="this.$store.getters.getStartForm"/>
+      <Intro_game v-if="this.$store.getters.getStartGame"/>
+      <Level_1 v-if="this.$store.getters.getLevel1"></Level_1>
+      <Level_2 v-if="this.$store.getters.getLevel2"></Level_2>
+      <Level_3 v-if="this.$store.getters.getLevel3"></Level_3>
+      <TestComponent v-if="this.$store.getters.getTestComponent"></TestComponent>
+      <FinalGame v-if="this.$store.getters.getFinalGame"></FinalGame>
+
     </div>
   </div>
 </template>

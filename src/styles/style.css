@@ -1,12 +1,13 @@
 body {
-    /* background-color: #4cbbe7; */
-    height: 100%;
-    width: 100%;
-    background-color: #FBAB7E;
-    background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
-    
-    font-family: 'Space Mono', monospace;
-    text-align: center;
+  /* background-color: #4cbbe7; */
+  padding-top: 10px;
+  height: 100%;
+  width: 100%;
+  background-color: #FBAB7E;
+  background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
+  
+  font-family: 'Space Mono', monospace;
+  text-align: center;
 }
 strong {
   color: #eca278;
@@ -20,10 +21,18 @@ h1 {
   display: inline-block;
   border-bottom: 3px solid transparent;
   border-image: linear-gradient(0.25turn, #FBAB7E 0%, #F7CE68 100%,  rgba(56,2,155,0));
-  margin: 20px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
   /* border-image: linear-gradient(0.25turn, rgba(255,249,34), rgba(255,0,128), rgba(56,2,155,0)); */
   border-image-slice: 1;
-}   
+}
+p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  line-height: 1.8;
+  padding: 10px;
+} 
 
 .general-box {
   height: 100%;
@@ -89,7 +98,7 @@ h1 {
     overflow-x: hidden;
     font-size: 20px;
     padding: 10px 15px 10px 15px;
-    margin-bottom: 25px;
+    /* margin-bottom: 25px; */
     margin-top: 10px;
   }
   .formRadio input[type="radio"]{
@@ -125,7 +134,7 @@ h1 {
   }
 
   .drop-zone {
-    /* width: 50%; */
+    width: 50%;
     margin: auto;
     margin-bottom: 1rem;
     background-color: #ecf0f1;
@@ -150,11 +159,13 @@ h1 {
   }
 
   .right{
-    background-color: rgb(48, 153, 27) !important;
+    background-color: rgb(92, 197, 71) !important;
+    box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(44, 230, 28, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
   }
 
   .wrong{
     background-color: tomato !important;
+    box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
   }
 
   /* Quita el margin bottom del final para que quede simetrico con el margin-top */
@@ -242,14 +253,6 @@ h1 {
   .popup .close:hover {
     color: #06D85F;
   }
-  .popup-exit:link, .popup-exit:active, .popup-exit:visited, .popup-exit:hover {
-    position: absolute;
-    top: 5%;
-    right: 5%;
-    font-size: 1.7rem;
-    text-decoration: none;
-    color: #F92A2A; 
-}
   @media screen and (max-width: 700px){
     .popup{
       width: 70%;
