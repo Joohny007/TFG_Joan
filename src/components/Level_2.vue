@@ -1,37 +1,44 @@
 <template>
     <div class="general-box rounded">
-        <div class="col-md-8 shadow rounded px-5 py-4 bg-light">
+        <div class="col-md-6 shadow rounded px-5 py-4 bg-light">
             <h1>2o día: Consecuencias</h1>  
 
-            <div class="row">
+            <div class="row" style="padding-bottom: 10px;">
                 <div class="column">
-                    <input id="estrés" type="image" v-bind:src="require('../images/estrés.jpg')" alt="" style="width: 100%; height: auto;" @click="mark('estrés')">
+                    <input id="estrés" type="image" v-bind:src="require('../images/estrés.jpg')" alt="" style="width: 85%; height: auto;" @click="mark('estrés')">
                     <p>Estrés</p>
                 </div>
                 <div class="column">
-                    <input id="cansancio" type="image" v-bind:src="require('../images/cansancio.png')" alt="" style="width: 100%; height: auto;" @click="mark('cansancio')">
+                    <input id="cansancio" type="image" v-bind:src="require('../images/cansancio.png')" alt="" style="width: 85%; height: auto;" @click="mark('cansancio')">
                     <p>Cansancio</p>
                 </div>
                 <div class="column">
-                    <input id="depresión" type="image" v-bind:src="require('../images/estrés.jpg')" alt="" style="width: 100%; height: auto;" @click="mark('depresión')">
+                    <input id="depresión" type="image" v-bind:src="require('../images/depressed.jpg')" alt="" style="width: 85%; height: auto;" @click="mark('depresión')">
                     <p>Depresión</p>
                 </div>
                 <div class="column">
-                    <input id="mal_humor" type="image" v-bind:src="require('../images/mal humor.jpg')" alt="" style="width: 100%; height: auto;" @click="mark('mal_humor')">
+                    <input id="mal_humor" type="image" v-bind:src="require('../images/bad mood.jpg')" alt="" style="width: 85%; height: auto;" @click="mark('mal_humor')">
                     <p>Mal humor</p>
                 </div>
                 <div class="column">
-                    <input id="nervios" type="image" v-bind:src="require('../images/estrés.jpg')" alt="" style="width: 100%; height: auto;" @click="mark('nervios')">
+                    <input id="nervios" type="image" v-bind:src="require('../images/nervios.jpg')" alt="" style="width: 85%; height: auto;" @click="mark('nervios')">
                     <p>Nervios</p>
                 </div>
                 <div class="column">
-                    <input id="malasnotas" type="image" v-bind:src="require('../images/malas notas.jpg')" alt="" style="width: 100%; height: auto;" @click="mark('malasnotas')">
+                    <input id="malasnotas" type="image" v-bind:src="require('../images/bad grades.jpg')" alt="" style="width: 85%; height: auto;" @click="mark('malasnotas')">
                     <p>Mal rendimiento académico</p>
                 </div>
                 <div class="column">
-                    <input id="hambre" type="image" v-bind:src="require('../images/hambre.jpg')" alt="" style="width: 100%; height: auto;" @click="mark('hambre')">
+                    <input id="hambre" type="image" v-bind:src="require('../images/hambre.jpg')" alt="" style="width: 85%; height: auto;" @click="mark('hambre')">
                     <p>Hambre</p>
                 </div>
+                <div class="col-md-8 rounded px-5 py-4 bg-light">
+                    <ul>
+                        <h2>Seleccionados:</h2>
+                        <li v-for="(element, index) in selectedElementNames" :key="index">{{ element }}</li>
+                    </ul>
+                </div>
+
             </div>
             <button id="comprobar_level2" class="button-62" style="margin: auto;" @click="verification2(); nextLevel('comprobar_level2', 'popup2_link')">Comprobar</button>
             <a id="popup2_link" class="button-62" href="#popup2" style="padding: 10px; margin: auto; display: none;" type="button">NEXT</a>
@@ -80,14 +87,31 @@
 <script>
     export default {
         name: "Level_2",
+        data: function() {
+            return {
+                selectedElements: []
+            };
+        },
+        computed: {
+            selectedElementNames: function() {
+                return this.selectedElements.map(function(element) {
+                    return element.name;
+                });
+            }
+        },
         methods: {
             mark: function(id) {
                 if (document.getElementById(id).style.border == "10px solid cyan"){
                     document.getElementById(id).style.border = "0px solid cyan";
+                    this.selectedElements = this.selectedElements.filter(function(element) {
+                        return element.id !== id;
+                    });
                 }else{
                     document.getElementById(id).style.border = "10px solid cyan";
                     document.getElementById(id).style.borderRadius = "5px";
                     document.getElementById(id).style.padding = "5px";
+                    this.selectedElements.push({ id: id, name: document.getElementById(id).nextElementSibling.textContent });
+                    console.log(this.selectedElementNames);
                 }
             },
 
