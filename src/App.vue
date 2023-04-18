@@ -34,7 +34,7 @@ export default {
     };
   },
   mounted() {
-    this.$store.commit('setID', Math.floor(1000000 + Math.random() * 9000000))
+    this.$store.commit('setID', Math.floor(1000 + Math.random() * 9000))
   },
   components: {
     Questions_home,

@@ -8,6 +8,7 @@
       </p>
       <p>A continuación os aparecerá un test muy corto en el que podeis responder con total sinceridad, vuestras respuestas son <strong>anónimas</strong>.</p>
       <p>Gracias de antemano!😁</p>
+      <p><span style="color: red; font-size:xx-large;">&#9888;</span>Por cierto, este es tu ID <strong style="font-size: xx-large;">{{this.$store.getters.getID}}</strong>, RECUERDALO porque al final lo necesitarás<span style="color: red; font-size:xx-large;">&#9888;</span></p>
       <button class="button-62" style="margin: auto;" type="button" @click="nextQuestion('introform', 'startform'); skipForm('none', 'skip')">NEXT</button>
     </div>
   </div>
