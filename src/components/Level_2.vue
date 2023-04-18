@@ -33,7 +33,7 @@
                     <p>Hambre</p>
                 </div>
                 <div class="col-md-8 rounded px-5 py-4 bg-light">
-                    <ul>
+                    <ul id="mis-seleccionados">
                         <h2>Seleccionados:</h2>
                         <li v-for="(element, index) in selectedElementNames" :key="index">{{ element }}</li>
                     </ul>
@@ -119,8 +119,9 @@
                 var wrongAns = 0
                 var correctAns = 0
                 if(document.getElementById('estrés').style.border == "10px solid cyan"){
+                    console.log(document.getElementById('mis-seleccionados').selectedElementNames.find(element => element == 'Estrés'))
                     wrongAns += 1
-                }else{correctAns += 1}
+                }else{correctAns += 1;/*document.getElementById('mis-seleccionados').find(element => element == 'Estrés').classList.add('right')*/}
                 if(document.getElementById('cansancio').style.border == "10px solid cyan"){
                     correctAns += 1
                 }else{wrongAns += 1}

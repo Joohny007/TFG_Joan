@@ -25,7 +25,6 @@ import Level_3 from './components/Level_3.vue'
 import TestComponent from './components/TestComponent.vue'
 import FinalGame from './components/FinalGame.vue'
 
-
 export default {
   name: 'App',
   data() {
@@ -34,7 +33,10 @@ export default {
     };
   },
   mounted() {
-    this.$store.commit('setID', Math.floor(1000 + Math.random() * 9000))
+    var animales = ['aardvark', 'albatross', 'alligator', 'alpaca', 'ant', 'anteater', 'antelope', 'ape', 'armadillo', 'baboon', 'badger', 'barracuda', 'bat', 'bear', 'beaver', 'bee', 'beetle', 'bird', 'bison', 'blackbird', 'boar', 'bobcat', 'buffalo', 'butterfly', 'camel', 'cat', 'caterpillar', 'cattle', 'cheetah', 'chicken', 'chimpanzee', 'chinchilla', 'clam', 'cobra', 'cockroach', 'cod', 'condor', 'coyote', 'crab', 'crane', 'crocodile', 'crow', 'deer', 'dog', 'dolphin', 'donkey', 'dove', 'dragonfly', 'duck', 'eagle', 'echidna', 'eel', 'elephant', 'elk', 'emu', 'falcon', 'ferret', 'fish', 'flamingo', 'fly', 'fox', 'frog', 'gazelle', 'gecko', 'gerbil', 'giraffe', 'gnu', 'goat', 'goldfish', 'goose', 'gorilla', 'grasshopper', 'guinea pig', 'gull', 'hamster', 'hare', 'hawk', 'hedgehog', 'hen', 'heron', 'hippopotamus', 'hornet', 'horse', 'hummingbird', 'hyena', 'iguana', 'impala', 'jackal', 'jaguar', 'jellyfish', 'kangaroo', 'kingfisher', 'koala', 'komodo dragon', 'kookaburra', 'ladybug', 'lark', 'lemming', 'lemur', 'leopard', 'lion', 'lizard', 'llama', 'lobster', 'locust', 'lynx', 'macaw', 'magpie', 'mallard', 'mammoth', 'manatee', 'mongoose', 'monkey', 'moose', 'mosquito', 'mouse', 'mule', 'narwhal', 'newt', 'nightingale', 'octopus', 'opossum', 'ostrich', 'otter', 'owl', 'ox', 'oyster', 'panda', 'panther', 'parrot', 'peacock', 'pelican', 'penguin', 'pheasant', 'pig', 'pigeon', 'polar bear', 'pony', 'porcupine', 'porpoise', 'prairie dog', 'quail', 'rabbit', 'raccoon', 'rat', 'rattlesnake', 'reindeer', 'rhinoceros', 'robin', 'rooster', 'salamander', 'salmon', 'sandpiper', 'sardine', 'scorpion', 'seagull', 'seahorse', 'seal', 'shark', 'sheep', 'shrew', 'skunk', 'snail', 'snake', 'sparrow', 'spider', 'squirrel', 'starling', 'stingray', 'stork', 'swallow', 'swan', 'tapir', 'tarsier', 'termite', 'tiger', 'toad', 'trout', 'turkey', 'turtle']
+    var animal = Math.floor(Math.random() * animales.length);
+    var numero = Math.floor(10 + Math.random() * 90)
+    this.$store.commit('setID', animales[animal] + '_' + String(numero))
   },
   components: {
     Questions_home,
