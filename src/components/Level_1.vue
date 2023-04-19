@@ -40,7 +40,7 @@
                     </div>
                 </div>
 
-                <p>es un</p>
+                <p>es un/a</p>
                 <div 
                     id="12"
                     class="drop-zone rounded"
