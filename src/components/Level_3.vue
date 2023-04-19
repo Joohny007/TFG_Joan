@@ -4,15 +4,15 @@
             <h1>3r día: Soluciones</h1>
             <div class="gameArea">
                 <h3>{{results}}</h3>
-                <h4>Current Box: {{ currVal }}</h4>
+                <h4 style="padding-bottom: 10px;">Current Box: {{ currVal }}</h4>
                 <div class="boxHolder">
-                    <div class="box"
+                    <div class="box" style="padding: 10px;"
                         v-for="(box, index) in boxData" :key="index"
                         >
-                        <button
+                        <button class="rounded"
                             :id="'box_' + index"
                             :class="box.show ? 'show' : '' "
-                            style="margin-bottom: 15px;"
+                            style="margin-bottom: 15px; "
                             @click="showBox(index, box.value)">
                             <p v-if="!box.show">Click Here</p>
                             <span>{{ box.value }}</span>
@@ -147,14 +147,15 @@
   }
   .box {
     width: 25%;
-    float: left  
+    float: left
   }
+  
 
 .box button { 
     width: 100%;
     height: 100px;
     border: 1px solid #ddd;
-    border-radius: 0;
+    background-color: #F7CE68;
 }
 
 button p {

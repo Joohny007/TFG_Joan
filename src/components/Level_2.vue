@@ -101,45 +101,58 @@
         },
         methods: {
             mark: function(id) {
-                if (document.getElementById(id).style.border == "10px solid cyan"){
+                if (document.getElementById(id).style.border == "5px solid cyan"){
                     document.getElementById(id).style.border = "0px solid cyan";
                     this.selectedElements = this.selectedElements.filter(function(element) {
                         return element.id !== id;
                     });
                 }else{
-                    document.getElementById(id).style.border = "10px solid cyan";
+                    document.getElementById(id).style.border = "5px solid cyan";
                     document.getElementById(id).style.borderRadius = "5px";
                     document.getElementById(id).style.padding = "5px";
                     this.selectedElements.push({ id: id, name: document.getElementById(id).nextElementSibling.textContent });
-                    console.log(this.selectedElementNames);
+                    console.log(this.selectedElementNames.find(element => element == 'Estrés'));
                 }
             },
 
             verification2: function() {
                 var wrongAns = 0
                 var correctAns = 0
-                if(document.getElementById('estrés').style.border == "10px solid cyan"){
-                    console.log(document.getElementById('mis-seleccionados').selectedElementNames.find(element => element == 'Estrés'))
+                if(document.getElementById('estrés').style.border == "5px solid cyan"){
+                    document.getElementById('estrés').classList.add('wrong')
+                    document.getElementById('estrés').style.padding = "0px";
                     wrongAns += 1
-                }else{correctAns += 1;/*document.getElementById('mis-seleccionados').find(element => element == 'Estrés').classList.add('right')*/}
-                if(document.getElementById('cansancio').style.border == "10px solid cyan"){
+                }else{correctAns += 1; document.getElementById('estrés').classList.add('right'); document.getElementById('estrés').style.padding = "0px";}
+                if(document.getElementById('cansancio').style.border == "5px solid cyan"){
+                    document.getElementById('cansancio').classList.add('right')
+                    document.getElementById('cansancio').style.padding = "0px";
                     correctAns += 1
-                }else{wrongAns += 1}
-                if(document.getElementById('depresión').style.border == "10px solid cyan"){
+                }else{wrongAns += 1; document.getElementById('cansancio').classList.add('wrong'); document.getElementById('cansancio').style.padding = "0px";}
+                if(document.getElementById('depresión').style.border == "5px solid cyan"){
+                    document.getElementById('depresión').classList.add('right')
+                    document.getElementById('depresión').style.padding = "0px";
                     correctAns += 1
-                }else{wrongAns += 1}
-                if(document.getElementById('mal_humor').style.border == "10px solid cyan"){
+                }else{wrongAns += 1; document.getElementById('depresión').classList.add('wrong'); document.getElementById('depresión').style.padding = "0px";}
+                if(document.getElementById('mal_humor').style.border == "5px solid cyan"){
+                    document.getElementById('mal_humor').classList.add('right')
+                    document.getElementById('mal_humor').style.padding = "0px";
                     correctAns += 1
-                }else{wrongAns += 1}
-                if(document.getElementById('nervios').style.border == "10px solid cyan"){
+                }else{wrongAns += 1; document.getElementById('mal_humor').classList.add('wrong'); document.getElementById('mal_humor').style.padding = "0px";}
+                if(document.getElementById('nervios').style.border == "5px solid cyan"){
+                    document.getElementById('nervios').classList.add('wrong')
+                    document.getElementById('nervios').style.padding = "0px";
                     wrongAns += 1
-                }else{correctAns += 1}
-                if(document.getElementById('hambre').style.border == "10px solid cyan"){
+                }else{correctAns += 1; document.getElementById('nervios').classList.add('right'); document.getElementById('nervios').style.padding = "0px";}
+                if(document.getElementById('hambre').style.border == "5px solid cyan"){
+                    document.getElementById('hambre').classList.add('wrong')
+                    document.getElementById('hambre').style.padding = "0px";
                     wrongAns += 1
-                }else{correctAns += 1}
-                if(document.getElementById('malasnotas').style.border == "10px solid cyan"){
+                }else{correctAns += 1; document.getElementById('hambre').classList.add('right'); document.getElementById('hambre').style.padding = "0px";}
+                if(document.getElementById('malasnotas').style.border == "5px solid cyan"){
+                    document.getElementById('malasnotas').classList.add('right')
+                    document.getElementById('malasnotas').style.padding = "0px";
                     correctAns += 1
-                }else{wrongAns += 1}
+                }else{wrongAns += 1; document.getElementById('malasnotas').classList.add('wrong'); document.getElementById('malasnotas').style.padding = "0px";}
                 this.$store.commit('setCorrectAnswers', correctAns)
                 this.$store.commit('setWrongAnswers', wrongAns)
             },

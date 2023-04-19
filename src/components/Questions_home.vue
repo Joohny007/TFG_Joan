@@ -2,7 +2,7 @@
     
   <div id="introform" class="general-box rounded">
     <div class="col-md-8 shadow rounded px-5 py-4 bg-light">
-      <h1 class="">BIENVENIDOS A MI TRABAJO!</h1>
+      <h1 class="">¡BIENVENIDOS A MI TRABAJO!</h1>
       <p>Mi nombre es Joan y este minijuego que estás viendo es mi parte práctica de mi trabajo final de carrera.
         Por este motivo os agradezco vuestro tiempo y esfuerzo en darle un par de minutos a este juego cortito.
       </p>
