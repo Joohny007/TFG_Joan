@@ -3,12 +3,12 @@
   <div id="introform" class="general-box rounded">
     <div class="col-md-8 shadow rounded px-5 py-4 bg-light">
       <h1 class="">¡BIENVENIDOS A MI TRABAJO!</h1>
-      <p>Mi nombre es Joan y este minijuego que estás viendo es mi parte práctica de mi trabajo final de carrera.
-        Por este motivo os agradezco vuestro tiempo y esfuerzo en darle un par de minutos a este juego cortito.
+      <p>Mi nombre es Joan y este minijuego que estás viendo es la parte práctica de mi trabajo final de carrera.
+        Por este motivo os agradezco mucho vuestro tiempo y esfuerzo en darle un par de minutos a este juego cortito.
       </p>
-      <p>A continuación os aparecerá un test muy corto en el que podeis responder con total sinceridad, vuestras respuestas son <strong>anónimas</strong>.</p>
-      <p>Gracias de antemano!😁</p>
-      <p><span style="color: red; font-size:xx-large;">&#9888;</span>Por cierto, este es tu ID <strong style="font-size: xx-large;">{{this.$store.getters.getID}}</strong>, RECUERDALO porque al final lo necesitarás<span style="color: red; font-size:xx-large;">&#9888;</span></p>
+      <p>A continuación os aparecerá un test muy corto en el que podéis responder con total sinceridad, vuestras respuestas son <strong>anónimas</strong>.</p>
+      <p>Grácias de antemano!😁</p>
+      <p><span style="color: red; font-size:xx-large; padding: 10px;">&#9888;</span>Por cierto, este es tu ID <strong style="font-size: xx-large;">{{this.$store.getters.getID}}</strong>, RECUERDALO porque al final lo necesitarás<span style="color: red; font-size:xx-large; padding: 10px;">&#9888;</span></p>
       <button class="button-62" style="margin: auto;" type="button" @click="nextQuestion('introform', 'startform'); skipForm('none', 'skip')">NEXT</button>
     </div>
   </div>
@@ -17,7 +17,7 @@
       <form style>
         <div id="startform" class="general-box rounded" style="display:none">
           <div class="col-md-4 shadow rounded px-5 py-4 bg-light">
-            <h1 class="text-center text-primary" style="padding-bottom: 10px;">Cuestionario Inicial</h1>
+            <h1 class="text-center" style="padding-bottom: 10px;">Cuestionario Inicial</h1>
             
             <div id="genero" class="formRadio radioText">
               <h5>¿Con qué género te identificas?</h5>
