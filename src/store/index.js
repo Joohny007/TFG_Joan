@@ -12,7 +12,7 @@ export default createStore({
         finalGame: false,
         testComponent: false,
         ID: 0,
-        testMode: true,
+        testMode: false,
         correctAnswers: 0,
         wrongAnswers: 0,
     },
