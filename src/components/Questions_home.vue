@@ -9,7 +9,7 @@
       <p>A continuación os aparecerá un test muy corto en el que podéis responder con total sinceridad, vuestras respuestas son <strong>anónimas</strong>.</p>
       <p>Grácias de antemano!😁</p>
       <p><span style="color: red; font-size:xx-large; padding: 10px;">&#9888;</span>Por cierto, este es tu ID <strong style="font-size: xx-large;">{{this.$store.getters.getID}}</strong>, RECUERDALO porque al final lo necesitarás<span style="color: red; font-size:xx-large; padding: 10px;">&#9888;</span></p>
-      <button class="button-62" style="margin: auto;" type="button" @click="nextQuestion('introform', 'startform'); skipForm('none', 'skip')">NEXT</button>
+      <button class="button-62" style="margin: auto;" type="button" @click="nextQuestion('introform', 'startform'); /*skipForm('none', 'skip')*/">NEXT</button>
     </div>
   </div>
       
@@ -70,18 +70,13 @@
             <div id="question3" style="display:none">
               <div class="formRadio radioText">
                 <h5>¿Qué tipo de aplicaciones sueles utilizar antes de irte a dormir?</h5>
-                <input type="radio" id="3.1" name="question3" value="Redes sociales (Whatsapp/Instagram/Youtube/Tiktok/etc…)" required>
-                <label for="3.1">Redes sociales (Whatsapp/Instagram/Youtube/Tiktok/etc…)</label>
-                <input type="radio" id="3.2" name="question3" value="Series o películas en Netflix/HBO/Amazon Video/etc…">
-                <label for="3.2">Series o películas en Netflix/HBO/Amazon Video/etc…</label>
-                <input type="radio" id="3.3" name="question3" value="Videojuegos">
-                <label for="3.3">Videojuegos</label>
-                <input type="radio" id="3.4" name="question3" value="Escuchar musica">
-                <label for="3.4">Escuchar musica</label>
-                <input type="radio" id="3.5" name="question3" value="Leer noticias/artículos para actualizarte sobre la actualidad">
-                <label for="3.5">Leer noticias/artículos para actualizarte sobre la actualidad</label>
-                <input type="radio" id="3.6" name="question3" value="Otras">
-                <label for="3.6">Otras</label>
+                <p>(Puedes marcar varias respuestas)</p>
+                <label for="3.1"><input type="checkbox" id="3.1" name="question3" value="Redes sociales (Whatsapp/Instagram/Youtube/Tiktok/etc…)" required>Redes sociales (Whatsapp/Instagram/Youtube/Tiktok/etc…)</label>
+                <label for="3.2"><input type="checkbox" id="3.2" name="question3" value="Series o películas en Netflix/HBO/Amazon Video/etc…">Series o películas en Netflix/HBO/Amazon Video/etc…</label>
+                <label for="3.3"><input type="checkbox" id="3.3" name="question3" value="Videojuegos">Videojuegos</label>
+                <label for="3.4"><input type="checkbox" id="3.4" name="question3" value="Escuchar musica">Escuchar musica</label>
+                <label for="3.5"><input type="checkbox" id="3.5" name="question3" value="Leer noticias/artículos para actualizarte sobre la actualidad">Leer noticias/artículos para actualizarte sobre la actualidad</label>
+                <label for="3.6"><input type="checkbox" id="3.6" name="question3" value="Otras">Otras</label>
                 <button class="button-62 mg-3" style="margin: auto;" type="button" @click="nextQuestion('question3', 'question4')">NEXT</button>
               </div>
             </div>
@@ -134,7 +129,7 @@
         }
         if(nextId == 'send' && document.querySelector('input[type=radio][name='+id+']:checked')){
           this.saveForm();
-        } else if(document.querySelector('input[type=radio][name='+id+']:checked')){
+        } else if(document.querySelector('input[type=radio][name='+id+']:checked') || document.querySelector('input[type=checkbox][name='+id+']:checked')){
           if(document.getElementById(nextId)){
             setTimeout(() => {
                 document.getElementById(nextId).style.display = 'flex';
@@ -177,7 +172,13 @@
       var edad = document.querySelector('input[type=radio][name=edad]:checked').value;
       var question1 = document.querySelector('input[type=radio][name=question1]:checked').value;
       var question2 = document.querySelector('input[type=radio][name=question2]:checked').value;
-      var question3 = document.querySelector('input[type=radio][name=question3]:checked').value;
+      var question3 = [];
+        var checkboxes = document.querySelectorAll('input[type=checkbox][name=question3]:checked');
+        if (checkboxes.length > 0) {
+          for (var i = 0; i < checkboxes.length; i++) {
+            question3.push(checkboxes[i].value);
+          }
+        }
       var question4= document.querySelector('input[type=radio][name=question4]:checked').value;
       var ultima= document.querySelector('input[type=radio][name=ultima]:checked').value;
       var preForm = [genero, edad, question1, question2, question3, question4, ultima];

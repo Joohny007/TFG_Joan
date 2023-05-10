@@ -21,7 +21,7 @@
                     </div>
                 </div>
 
-                <p>El</p>
+                <p>El/La</p>
                 <div 
                     id="13"
                     class="drop-zone rounded"

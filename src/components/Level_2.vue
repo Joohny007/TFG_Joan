@@ -2,7 +2,7 @@
     <div class="general-box rounded">
         <div class="col-md-6 shadow rounded px-5 py-4 bg-light">
             <h1>2o día: Consecuencias</h1>  
-            <p>Selecciona las imagenes que creas que son las posibles consecuencias y una vez hayas seleccionado todas, haz click en "Comprobar"</p>
+            <p>Selecciona las imagenes que creas que son las posibles consecuencias y una vez las hayas seleccionado, haz click en "Comprobar"</p>
 
             <div class="row" style="padding-bottom: 10px;">
                 <div class="column">
