@@ -71,12 +71,24 @@
               <div class="formRadio radioText">
                 <h5>¿Qué tipo de aplicaciones sueles utilizar antes de irte a dormir?</h5>
                 <p>(Puedes marcar varias respuestas)</p>
-                <label for="3.1"><input type="checkbox" id="3.1" name="question3" value="Redes sociales (Whatsapp/Instagram/Youtube/Tiktok/etc…)" required>Redes sociales (Whatsapp/Instagram/Youtube/Tiktok/etc…)</label>
-                <label for="3.2"><input type="checkbox" id="3.2" name="question3" value="Series o películas en Netflix/HBO/Amazon Video/etc…">Series o películas en Netflix/HBO/Amazon Video/etc…</label>
-                <label for="3.3"><input type="checkbox" id="3.3" name="question3" value="Videojuegos">Videojuegos</label>
-                <label for="3.4"><input type="checkbox" id="3.4" name="question3" value="Escuchar musica">Escuchar musica</label>
-                <label for="3.5"><input type="checkbox" id="3.5" name="question3" value="Leer noticias/artículos para actualizarte sobre la actualidad">Leer noticias/artículos para actualizarte sobre la actualidad</label>
-                <label for="3.6"><input type="checkbox" id="3.6" name="question3" value="Otras">Otras</label>
+                <div>
+                  <label for="3.1" class="form-control1" >
+                    <input type="checkbox" id="3.1" name="question3" value="Redes sociales (Whatsapp/Instagram/Youtube/Tiktok/etc…)" required>Redes sociales (Whatsapp/Instagram/Youtube/Tiktok/etc…)
+                  </label>
+                  <label for="3.2" class="form-control1" >
+                    <input type="checkbox" id="3.2" name="question3" value="Series o películas en Netflix/HBO/Amazon Video/etc…">Series o películas en Netflix/HBO/Amazon Video/etc…
+                  </label>
+                  <label for="3.3" class="form-control1" >
+                    <input type="checkbox" id="3.3" name="question3" value="Videojuegos">Videojuegos
+                  </label>
+                  <label for="3.4" class="form-control1" >
+                    <input type="checkbox" id="3.4" name="question3" value="Escuchar musica">Escuchar musica
+                  </label>
+                  <label for="3.5" class="form-control1" >
+                    <input type="checkbox" id="3.5" name="question3" value="Leer noticias/artículos para actualizarte sobre la actualidad">Leer noticias/artículos para actualizarte sobre la actualidad
+                  </label>
+                  <label for="3.6" class="form-control1" ><input type="checkbox" id="3.6" name="question3" value="Otras">Otras</label>
+                </div>
                 <button class="button-62 mg-3" style="margin: auto;" type="button" @click="nextQuestion('question3', 'question4')">NEXT</button>
               </div>
             </div>
@@ -201,12 +213,55 @@
   }
   </script>
   
-  <style>
+  <style scoped>
   @media (min-width: 768px) {
-  .button-56 {
-    padding: 0 40px;
+    .button-56 {
+      padding: 0 40px;
+    }
   }
-}
+
+  .form-control1{
+    display: grid;
+    grid-template-columns: 1em auto;
+    gap: 0.5em;
+    padding: 10px;
+  }
+
+
+  input[type="checkbox"] {
+    display: grid;
+    place-content: center;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #fff;
+    margin: 0;
+    color: black;
+    width: 1.15em;
+    height: 1.15em;
+    border: 0.15em solid currentColor;
+    border-radius: 0.15em;
+    transform: translateY(-0.075em);
+  }
+  .form-control1 + .form-control1 {
+    margin-top: 1em;
+  }
+  input[type="checkbox"]::before {
+    content: "";
+    width: 0.65em;
+    height: 0.65em;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    background-color: #FBAB7E; /* Fondo del checkbox */
+    border-radius: 0.15em;
+  }
+  input[type="checkbox"]:checked::before {
+    transform: scale(1);
+  }
+  input[type="checkbox"]:hover {
+    box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
+  }
+
+  
   </style>
   <!-- <h1>Questionari prueba</h1>
     <div id="form_box">
